@@ -9,7 +9,6 @@
     "start": "node server/server.js",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
-
   },
   "repository": {
     "type": "git",
@@ -22,6 +21,7 @@
   },
   "homepage": "https://github.com/Qaizen/curious-chronicles",
   "dependencies": {
-    "concurrently": "7.5.0"
+    "concurrently": "7.5.0",
+    "dotenv": "^16.1.3"
   }
 }
