@@ -1,4 +1,5 @@
-const Tech = require('./Tech');
-const Matchup = require('./Matchup');
+const Child = require('./Child');
+const Entry = require('./Entry');
+const Parent = require('./Parent');
 
-module.exports = { Tech, Matchup };
+module.exports = { Child, Entry, Parent, };
