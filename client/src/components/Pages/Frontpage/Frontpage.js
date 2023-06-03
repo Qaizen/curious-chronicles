@@ -4,14 +4,10 @@
 function Frontpage() {
     return (
         <div className="about-page">
-            <div className="info-section">
-                <div className="info-image">
-                </div>
-                <div className="info-text">
-                    <p>&#9996;</p>
-                    <h2>Curious Chronicles</h2>
-                </div>
-            </div>
+            <h1>Curious Chronicles</h1>
+            <h2>Welcome to a world of understand and creativity!</h2>
+            <h3>Make sure to get a grownup before you start!</h3>
+
         </div>
     );
 }
