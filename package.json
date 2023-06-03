@@ -1,0 +1,27 @@
+{
+  "name": "curious-chronicles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "start": "node server/server.js",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qaizen/curious-chronicles"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HeadbandDandy/apeClub/issues"
+  },
+  "homepage": "https://github.com/Qaizen/curious-chronicles",
+  "dependencies": {
+    "concurrently": "7.5.0"
+  }
+}
