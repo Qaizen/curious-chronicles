@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
-const Parent = require('./Parent');
 
+const Parent = require('./Parent');
 
 const childSchema = new Schema({
     name: {
@@ -20,11 +20,7 @@ const childSchema = new Schema({
 
 });
 
-
-
-
-
-
 const Child = model('Child', childSchema);
 
 module.exports = Child;
+

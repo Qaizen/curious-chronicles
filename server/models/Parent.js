@@ -47,9 +47,8 @@ parentSchema.methods.isCorrectPassword = async function (password) {
 
 // when we query a parent, we'll also get another field called `savedChildren` with the number of children per parent
 parentSchema.virtual('numSavedChildren').get(function () {
-    return this.savedChildren.length;
+  return this.savedChildren.length;
 });
-
 
 const Parent = model('Parent', parentSchema);
 
