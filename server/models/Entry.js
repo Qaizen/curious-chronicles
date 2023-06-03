@@ -5,7 +5,6 @@ const entrySchema = new Schema({
         {
             type: String,
             required: true,
-
         },
     ],
     mood: {

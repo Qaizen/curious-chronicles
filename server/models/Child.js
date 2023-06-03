@@ -7,6 +7,10 @@ const childSchema = new Schema({
     type: String,
     required: true,
   },
+  badges: {
+    type: String,
+    required: true,
+  },
   // we can add favorite color and theme later!
   savedEntry: [bookSchema],
   // dont know if this is needed
