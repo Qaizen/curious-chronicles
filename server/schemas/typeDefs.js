@@ -14,7 +14,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    # Add query fields here (if any)
+    parents: [Parent]
   }
 
   type Mutation {
