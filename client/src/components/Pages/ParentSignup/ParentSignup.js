@@ -35,12 +35,12 @@ const ParentSignup = (props) => {
   //   }
 
   // clear form values
-  setFormState({
-    fname: '',
-    lname: '',
-    email: '',
-    password: '',
-  });
+  // setFormState({
+  //   fname: '',
+  //   lname: '',
+  //   email: '',
+  //   password: '',
+  // });
 
   return (
     <div>
