@@ -36,6 +36,9 @@
   color: white;
   align-self: center;
   margin: 30px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 16px;
 }
 
 /*
@@ -45,9 +48,12 @@
 .about-page {
   background-color: var(--colorthr);
   padding: 50px;
-  display: grid;
   color: var(--offblack);
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
 
 }
 
@@ -69,4 +75,9 @@
 .subName {
   font-family: 'Mali', cursive;
   font-size: 24px;
+}
+
+.divGir {
+  display: flex;
+
 }
