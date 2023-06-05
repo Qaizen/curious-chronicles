@@ -43,9 +43,9 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Frontpage />} />
-          <Route path="/ChildSignup" element={<ChildSignup />} />
-          <Route path="/ParentSignup" element={<ParentSignup />} />
-          <Route path="/Home" element={<Home />} />
+          <Route path="./ChildSignup" element={<ChildSignup />} />
+          <Route path="./ParentSignup" element={<ParentSignup />} />
+          <Route path="./Home" element={<Home />} />
         </Routes>
       </div>
     </Router>
