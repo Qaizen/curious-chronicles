@@ -43,46 +43,22 @@ const ParentSignup = (props) => {
   // });
 
   return (
-    <div>
 
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+    <div className="Signup-body">
+      <div className='row'>
+        <img className="imgBook" src='./Photos/Grownup.png' alt="A bunny" />
+        <div className='col Mali'>
 
+          <h1 className='parTitle'>This stuff is for grownups!</h1>
+          <form className='col  form'>
+            <div className='row passwordInput'>
 
-            <form >
               <input
                 className="form-input"
-                placeholder="First name"
-                name="fname"
-                type="fname"
-                value={formState.fname}
-              //onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="Last name"
-                name="lname"
-                type="lname"
-                value={formState.lname}
-              //onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="Your email"
-                name="email"
-                type="email"
-                value={formState.email}
-              //onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="******"
+                placeholder="Password"
                 name="fpassword"
                 type="fpassword"
                 value={formState.fpassword}
-
               />
               <input
                 className="form-input"
@@ -92,25 +68,38 @@ const ParentSignup = (props) => {
                 value={formState.password}
               // onChange={handleChange}
               />
-              <button
-                className="btn btn-block btn-primary"
-                style={{ cursor: 'pointer' }}
-                type="submit"
-              >
-                Submit
-              </button>
-            </form>
+            </div>
+            <input
+              className="form-input emailFrom"
+              placeholder="Your email"
+              name="email"
+              type="email"
+              value={formState.email}
+            //onChange={handleChange}
+            />
+          </form>
+          <a href='/ChildSignup'>
 
-            {/* 
+            <button
+              className="btn btn-block btn-primary BtnRed"
+              style={{ cursor: 'pointer' }}
+
+
+            >
+              Submit
+            </button>
+          </a>
+
+          {/* 
           {error && (
             <div className="my-3 p-3 bg-danger text-white">
-              {error.message}
+            {error.message}
             </div>
           )} */}
-          </div>
         </div>
       </div>
     </div>
+
   );
 };
 
