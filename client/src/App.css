@@ -28,19 +28,54 @@
 */
 
 .BtnRed {
-  padding: 10px;
-  width: 200px;
+  padding: 15px;
+  min-width: 200px;
   border: none;
   border-radius: 15px;
   background-color: var(--colorone);
   color: white;
   align-self: center;
-  margin: 30px;
+  margin: 35px;
   font-family: 'Mali',
     cursive;
-  font-size: 16px;
+  font-size: 18px;
 }
 
+.circle {
+  min-width: 60px;
+  min-height: 60px;
+  max-width: 60px;
+  max-height: 60px;
+  background-color: #C7F1A6;
+  border: 7px white solid;
+  border-radius: 50%;
+
+}
+
+.BigCircle {
+  min-width: 150px;
+  min-height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  background-color: #C83659;
+  border: 10px white solid;
+  border-radius: 50%;
+}
+
+.MoodLine {
+  display: flex;
+  justify-content: center;
+}
+
+.backgroundHome {
+  margin: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* Three equal-width columns */
+
+
+  align-items: center;
+}
 
 .row {
   display: flex;
@@ -87,6 +122,7 @@
 
 .imgBook {
   max-width: 400px;
+  max-height: 400px;
 
 }
 
@@ -129,6 +165,7 @@
 
 .form {
   max-width: 600px;
+  margin: 20px;
 }
 
 .emailFrom {
@@ -142,7 +179,10 @@
 .backgroundY {
 
   background-color: var(--colorfou);
+  height: 100dvh;
 }
+
+
 
 .childform-input {
   background-color: #9F9D64;
@@ -162,4 +202,76 @@
   font-size: 18px;
   align-self: start;
   padding-left: 30px;
+}
+
+
+
+/*
+    Home
+*/
+
+
+.brownBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--offblack);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  width: 200px;
+  margin: 30px;
+  font-family: 'Mali',
+    cursive;
+
+
+}
+
+.Badges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.Streak {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--offblack);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  width: 200px;
+  margin: 30px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 20px;
+
+}
+
+.fontsizeHome {
+  font-family: 'Mali',
+    cursive;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.greyBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #DADADA;
+  color: --offblack;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  width: 200px;
+  margin: 30px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 20px;
 }

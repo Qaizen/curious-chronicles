@@ -1,13 +1,12 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import { LOGIN_USER } from '../../utils/mutations.js';
 
-import Auth from '../utils/auth';
+import Auth from '../../utils/auth.js';
 
-const ParentSignup = (props) => {
-  const [formState, setFormState] = useState({ fname: '', lname: '', email: '', password: '' });
+const Login = (props) => {
+  const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
@@ -26,7 +25,7 @@ const ParentSignup = (props) => {
     console.log(formState);
     try {
       const { data } = await login({
-        variables: { ...formState },
+        variables: formState,
       });
 
       Auth.login(data.login.token);
@@ -36,16 +35,13 @@ const ParentSignup = (props) => {
 
     // clear form values
     setFormState({
-      fname: '',
-      lname: '',
       email: '',
       password: '',
     });
   };
 
   return (
-    <div>
-
+    <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
@@ -59,35 +55,11 @@ const ParentSignup = (props) => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="First name"
-                  name="fname"
-                  type="fname"
-                  value={formState.fname}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Last name"
-                  name="lname"
-                  type="lname"
-                  value={formState.lname}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
                   placeholder="Your email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="fpassword"
-                  type="fpassword"
-                  value={formState.fpassword}
-
                 />
                 <input
                   className="form-input"
@@ -115,8 +87,8 @@ const ParentSignup = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
-export default ParentSignup
+export default Login;
