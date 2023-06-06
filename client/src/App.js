@@ -30,10 +30,10 @@ import Sub from './components/Pages/GrownupArea/Sub.js'
 
 
 //question inports
-import QOne from './components/Pages/Questions/One.js'
-import QTwo from './components/Pages/Questions/Two.js'
-import QThree from './components/Pages/Questions/Three.js'
-import QFinished from './components/Pages/Questions/Finished.js'
+import QMood from './components/Pages/Questions/QMood.js'
+import QOne from './components/Pages/Questions/QOne.js'
+import QTwo from './components/Pages/Questions/QTwo.js'
+import QFinished from './components/Pages/Questions/QFinished.js'
 
 // need to add auth here!!!!
 
@@ -43,7 +43,7 @@ import QFinished from './components/Pages/Questions/Finished.js'
 
 
 function App() {
-  const [page, setPage] = useState("splash");
+  // const [page, setPage] = useState("splash");
 
   return (
     // <ApolloProvider client={client}>
@@ -62,9 +62,9 @@ function App() {
           <Route path="/Sub" element={<Sub />} />
 
           {/* questions links  */}
+          <Route path="/QMood" element={<QMood />} />
           <Route path="/QOne" element={<QOne />} />
           <Route path="/QTwo" element={<QTwo />} />
-          <Route path="/QThree" element={<QThree />} />
           <Route path="/QFinished" element={<QFinished />} />
         </Routes>
       </div>

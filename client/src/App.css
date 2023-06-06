@@ -290,6 +290,11 @@
   background-color: var(--colortwo);
 }
 
+
+.Blue {
+  background-color: var(--colorthr)
+}
+
 .BigMood {
   width: 200px;
   height: 200px;
@@ -300,8 +305,29 @@
 
 }
 
+.QOne {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .QWords {
   font-size: 34px;
   margin: 20px;
   margin-left: 80px;
+  color: var(--offblack);
+
+  grid-column: 1 / 5
+}
+
+.QTextarea {
+  height: 200px;
+
+  border: #DADADA solid 10px;
+  border-radius: 15px;
+  grid-column: 1 / 5
+}
+
+.right {
+  grid-column: 4 / 5
 }
