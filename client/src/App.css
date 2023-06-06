@@ -41,13 +41,27 @@
   font-size: 16px;
 }
 
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /*
     about-page
 */
 
 .about-page {
   background-color: var(--colorthr);
-  padding: 50px;
+  padding: 60px;
   color: var(--offblack);
   justify-content: center;
   display: flex;
@@ -68,16 +82,84 @@
 .Subtitle {
   font-family: 'Mali', cursive, italic;
   font-size: 30px;
+  padding: 10px;
 }
 
-.imgBook {}
+.imgBook {
+  max-width: 400px;
+
+}
 
 .subName {
   font-family: 'Mali', cursive;
   font-size: 24px;
+  padding: 10px;
 }
 
 .divGir {
   display: flex;
 
+}
+
+
+/*
+    parent-signup-page
+*/
+
+.Signup-body {
+  padding: 85px;
+}
+
+.parTitle {
+  font-size: 50px;
+  margin: 55px;
+
+}
+
+.form-input {
+  background-color: #CBCFD1;
+  border: none;
+  border-radius: 15px;
+  margin: 15px;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.passwordInput {}
+
+.form {
+  max-width: 600px;
+}
+
+.emailFrom {
+  width: 450px;
+}
+
+
+/*
+    Chat-signup-page
+*/
+.backgroundY {
+
+  background-color: var(--colorfou);
+}
+
+.childform-input {
+  background-color: #9F9D64;
+  border: none;
+  border-radius: 15px;
+  margin: 25px;
+  font-size: 16px;
+  padding: 20px;
+
+
+}
+
+.label {
+  font-family: 'Mali',
+    cursive;
+  color: var(--offblack);
+  font-size: 18px;
+  align-self: start;
+  padding-left: 30px;
 }

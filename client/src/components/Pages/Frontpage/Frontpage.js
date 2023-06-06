@@ -11,7 +11,7 @@ function Frontpage() {
 
                 <img className="imgBook" src='./Photos/bunny.png' alt="A bunny" />
                 <img className="imgBook" src='./Photos/Book.png' alt="A book" />
-                <img className="imgBook" src='./Photos/giraffe.png' alt="A g" />
+                <img className="imgBook" src='./Photos/giraffe.png' alt="A giraffe" />
             </div>
             <div className="divGir">
 
