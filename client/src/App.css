@@ -219,11 +219,12 @@
   color: white;
   border: none;
   border-radius: 15px;
-  padding: 15px;
+  padding: 20px;
   width: 200px;
-  margin: 50px;
+  margin: 30px;
   font-family: 'Mali',
     cursive;
+
 
 }
 
@@ -231,4 +232,46 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
+}
+
+.Streak {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--offblack);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  width: 200px;
+  margin: 30px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 20px;
+
+}
+
+.fontsizeHome {
+  font-family: 'Mali',
+    cursive;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.greyBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #DADADA;
+  color: --offblack;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  width: 200px;
+  margin: 30px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 20px;
 }
