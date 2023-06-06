@@ -275,3 +275,33 @@
     cursive;
   font-size: 20px;
 }
+
+
+/*
+    Q
+*/
+
+.BackgroundQ {
+  padding: 200px;
+  height: 60dvh;
+}
+
+.Green {
+  background-color: var(--colortwo);
+}
+
+.BigMood {
+  width: 200px;
+  height: 200px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  margin: 20px;
+
+}
+
+.QWords {
+  font-size: 34px;
+  margin: 20px;
+  margin-left: 80px;
+}

@@ -12,7 +12,7 @@ function Home() {
                 <MoodLine />
 
                 <img className="imgBook" src='./Photos/Elephant.png' alt="A Elephant" />
-                <a href="#">
+                <a href="/QOne">
                     <button className="BtnRed">All Done!</button>
                 </a>
             </div>
