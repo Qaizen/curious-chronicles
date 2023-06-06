@@ -41,6 +41,30 @@
   font-size: 16px;
 }
 
+.circle {
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  background-color: #C7F1A6;
+  border: 7px white solid;
+  border-radius: 50%;
+
+}
+
+.BigCircle {
+  min-width: 150px;
+  min-height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  background-color: #C83659;
+  border: 10px white solid;
+  border-radius: 50%;
+}
+
+
+
+
 
 .row {
   display: flex;
@@ -129,6 +153,7 @@
 
 .form {
   max-width: 600px;
+  margin: 20px;
 }
 
 .emailFrom {
@@ -142,7 +167,10 @@
 .backgroundY {
 
   background-color: var(--colorfou);
+  height: 100dvh;
 }
+
+
 
 .childform-input {
   background-color: #9F9D64;
@@ -162,4 +190,31 @@
   font-size: 18px;
   align-self: start;
   padding-left: 30px;
+}
+
+
+
+/*
+    Home
+*/
+
+
+.brownBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--offblack);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  width: 200px;
+  margin: 50px;
+
+}
+
+.Badges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
