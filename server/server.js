@@ -40,5 +40,5 @@ const startApolloServer = async () => {
 };
 
 // Call the async function to start the server
-startApolloServer();
+startApolloServer(typeDefs, resolvers);
 
