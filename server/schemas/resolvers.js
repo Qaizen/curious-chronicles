@@ -4,6 +4,18 @@ const { Parent, Child, Entry } = require('../models');
 
 const resolvers = {
   Query: {
+    me: async (parent, args, context) => {
+      if (context.user) {
+        try {
+          const userData = await Parent.findOne({ _id: context.user.id })
+          return userData
+
+        } catch (error) {
+          throw error
+        }
+      }
+      throw new AuthenticationError('Please log in!')
+    },
     parents: async () => {
       try {
         const parents = await Parent.find();
