@@ -21,7 +21,7 @@ import './App.css';
 import Frontpage from './components/Pages/Frontpage/Frontpage.js';
 import ParentSignup from './components/Pages/ParentSignup/ParentSignup.js';
 import ChildSignup from './components/Pages/ChildSignup/ChildSignup.js';
-import Home from './components/Pages/Home/Home';
+import Home from './components/Pages/Home/Homepage.js';
 
 
 

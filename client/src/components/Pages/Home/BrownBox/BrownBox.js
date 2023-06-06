@@ -3,7 +3,7 @@ import Circle from './circlePlaceholder.js'
 import BigCircle from './BigCircle.js';
 
 
-function Home() {
+function BrownBox() {
   return (
     <div>
       <div className='brownBox'>
@@ -27,4 +27,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default BrownBox;
