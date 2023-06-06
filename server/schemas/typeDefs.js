@@ -33,6 +33,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    me: Parent
     parents: [Parent]
     children: [Child]
     entries: [Entry]
