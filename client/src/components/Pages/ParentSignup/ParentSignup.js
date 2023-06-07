@@ -57,15 +57,15 @@ const ParentSignup = (props) => {
                 className="form-input"
                 placeholder="Password"
                 name="fpassword"
-                type="fpassword"
+                type="password"
                 value={formState.fpassword}
               />
               <input
                 className="form-input"
-                placeholder="******"
+                placeholder="Confirm your password"
                 name="password"
                 type="password"
-                value={formState.password}
+              // value={formState.password}
               // onChange={handleChange}
               />
             </div>
@@ -89,6 +89,7 @@ const ParentSignup = (props) => {
               Submit
             </button>
           </a>
+          <p>Already have an account? <Link to="/login">Login here</Link></p>
 
           {/* 
           {error && (

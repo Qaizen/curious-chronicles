@@ -25,23 +25,23 @@ const resolvers = {
       }
     },
 
-    children: async () => {
-      try {
-        const children = await Child.find();
-        return children;
-      } catch (error) {
-        throw new Error('Failed to fetch children')
-      }
-    },
+    // children: async () => {
+    //   try {
+    //     const children = await Child.find();
+    //     return children;
+    //   } catch (error) {
+    //     throw new Error('Failed to fetch children')
+    //   }
+    // },
 
-    entries: async () => {
-      try {
-        const entries = await Entry.find();
-        return entries;
-      } catch (error) {
-        throw new Error('Failed to fetch entries')
-      }
-    }
+    // entries: async () => {
+    //   try {
+    //     const entries = await Entry.find();
+    //     return entries;
+    //   } catch (error) {
+    //     throw new Error('Failed to fetch entries')
+    //   }
+    // }
 
   },
   Mutation: {
