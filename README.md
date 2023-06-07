@@ -1,33 +1,31 @@
+
 # Curious Chronicles
-- Making sure your child isn't out of touch.
-- Communicative children become wonderful adults.
-- idk I'm just coming up with bs
 
 ## Description
-- This app aims to create a supportive environment for families, focusing on promoting positive mental well-being and personal growth for children. It offers various features like mood tracking, affirmations, and gratitude prompts. The target audience is families, with parents as primary users and children as end users. The design process is similar to a personal blog, with APIs used in the app. Users create accounts with avatars and 4-digit pins, and completing activities can earn children games and badges. The app also allows for searching and sharing of content, and includes a donate button using the Stripe payment platform.
+The development of this sophisticated web application is driven by the utilization of an extensive technology stack, including HTML, CSS, JavaScript, MongoDB, Express, React Node, GraphQL, and Node Package Manager. Its purpose is to establish an innovative online platform specifically designed for children's journaling.
 
-## Our Purpose
-- T create a supportve environment for families.
-- To improve child psychology, mental wellness, spelling, grammar, and open-sharing communication.
+The primary objective of this application is to cultivate a supportive environment for families, while concurrently fostering positive mental well-being and facilitating personal growth through the practice of online journaling and reflective exercises.
 
-## How to Install
--
--
--
+By empowering parents to register their children, the app provides a seamless pathway for young users to embark on a transformative journey. With the ability to create personalized avatars for secure login and choose their daily mood, children are encouraged to explore a diverse array of writing prompts. Moreover, they are incentivized to actively engage with the platform, earning badges upon completion of interactive games and fostering meaningful communication.
 
-## How to Use
--
--
--
-
-## Link to GitHub
+## Link to Github Repository
 - [Github](https://github.com/Qaizen/curious-chronicles)
 
 ## Link to Live Site
-- 
+- [Add Link](https://github.com/Qaizen/curious-chronicles)
+    
+## Preview
+![Screenshot](pic here)
 
-## Screenshots of Live Site
--
--
--
--
+## Future Updates
+- Internal Family Area for submission and upvotes.
+- Ipads and Chrome Extensions
+- In-app games and badging
+
+## Credits
+- Gina Davis | [GitHub](https://github.com/ginitadavis) | [Portfolio](https://ginitadavis.github.io/platinum-portfolio/) | [LinkedIn](https://www.linkedin.com/in/gina-davis-b3944525/) 
+- Leah Harden | [GitHub](https://github.com/Leah-Harden) | [Portfolio](https://github.com/Leah-Harden/React-Based-Showcase) | [LinkedIn](https://www.linkedin.com/in/leahxharden/) 
+- Patrick Ameglio | [GitHub](https://github.com/PatAmeglio) | [Portfolio](https://github.com/PatAmeglio/react-portfolio) | [LinkedIn](https://www.linkedin.com/in/patrick-ameglio-8319a6b0/) 
+- John Magnusson | [GitHub](https://github.com/sobewon) | [Portfolio](https://sobewon.github.io/reaction-portfolio/) | [LinkedIn](https://www.linkedin.com/in/john-magnuson-8b0806263/) 
+- Steven Nguyen | [GitHub](https://github.com/Qaizen) | [Portfolio](https://qaizen.github.io/react-portfolio/) | [LinkedIn](https://www.linkedin.com/in/steveqvnguyen/) 
+
