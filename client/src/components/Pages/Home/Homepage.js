@@ -12,7 +12,7 @@ function Home() {
                 <MoodLine />
 
                 <img className="imgBook" src='./Photos/Elephant.png' alt="A Elephant" />
-                <a href="#">
+                <a href="/QMood">
                     <button className="BtnRed">All Done!</button>
                 </a>
             </div>
@@ -36,12 +36,15 @@ function Home() {
                     <h3 className='fontsizeHome'>Calendar</h3>
 
                 </div>
-                <div className="greyBox">
+                <a href='/Login'>
 
-                    <h3>Grownup</h3>
-                    <h3>Area</h3>
+                    <div className="greyBox">
 
-                </div>
+                        <h3>Grownup</h3>
+                        <h3>Area</h3>
+
+                    </div>
+                </a>
 
             </div>
         </div>

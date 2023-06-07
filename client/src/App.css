@@ -259,6 +259,99 @@
   padding: 5px;
 }
 
+
+
+/*
+    Q
+*/
+
+.BackgroundQ {
+  padding: 200px;
+  height: 60dvh;
+}
+
+.Green {
+  background-color: var(--colortwo);
+}
+
+
+.Blue {
+  background-color: var(--colorthr)
+}
+
+.BigMood {
+  width: 200px;
+  height: 200px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  margin: 20px;
+
+}
+
+.QOne {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.QWords {
+  font-size: 34px;
+  margin: 20px;
+  margin-left: 80px;
+  color: var(--offblack);
+
+  grid-column: 1 / 5
+}
+
+.QTextarea {
+  height: 200px;
+
+  border: #DADADA solid 10px;
+  border-radius: 15px;
+  grid-column: 1 / 5
+}
+
+.right {
+  grid-column: 4 / 5
+}
+
+/*
+    Grownup
+*/
+
+.kidcenter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #DADADA;
+  color: --offblack;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+
+  margin: 30px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 20px;
+}
+
+.padding {
+  padding: 10px 30px 10px 30px;
+
+}
+
+.SubBoxLink {
+  display: flex;
+  align-items: start;
+}
+
+.SubBoxLinkCir {
+  display: flex;
+  align-items: center;
+}
+
 .greyBox {
   display: flex;
   flex-direction: column;
@@ -275,3 +368,55 @@
     cursive;
   font-size: 20px;
 }
+
+.LongGreyBox {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  background-color: #DADADA;
+  color: --offblack;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  margin: 25px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 20px;
+}
+
+.SBmargin {
+  margin: 5px;
+}
+
+.AddChild {
+  display: flex;
+  align-items: center;
+  align-self: start;
+  margin-left: 30px;
+}
+
+.GrownupSubTitle {
+  font-size: 20px;
+  margin-left: 30px;
+  margin-top: 15px;
+}
+
+.BtnBrown {
+  padding: 15px;
+  min-width: 200px;
+  border: none;
+  border-radius: 15px;
+  background-color: var(--offblack);
+  color: white;
+  align-self: center;
+  margin: 35px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 18px;
+  align-self: start;
+}
+
+/*
+    Sub
+*/

@@ -24,15 +24,15 @@ import Home from './components/Pages/Home/Homepage.js';
 
 //Grown up imports
 import Login from './components/Pages/GrownupArea/Login.js'
-import GrownupArea from './components/Pages/GrownupArea/GrowupArea.js'
+import GrownupArea from './components/Pages/GrownupArea/GrownupArea.js'
 import Sub from './components/Pages/GrownupArea/Sub.js'
 
 
 //question inports
-import QOne from './components/Pages/Questions/One.js'
-import QTwo from './components/Pages/Questions/Two.js'
-import QThree from './components/Pages/Questions/Three.js'
-import QFinished from './components/Pages/Questions/Finished.js'
+import QMood from './components/Pages/Questions/QMood.js'
+import QOne from './components/Pages/Questions/QOne.js'
+import QTwo from './components/Pages/Questions/QTwo.js'
+import QFinished from './components/Pages/Questions/QFinished.js'
 
 // need to add auth here!!!!
 // Construct our main GraphQL API endpoint
@@ -61,34 +61,35 @@ const client = new ApolloClient({
 
 
 function App() {
-  const [page, setPage] = useState("splash");
+  // const [page, setPage] = useState("splash");
 
   return (
-    <ApolloProvider client={client}>
-      <Router>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Frontpage />} />
-            <Route path="/ChildSignup" element={<ChildSignup />} />
-            <Route path="/ParentSignup" element={<ParentSignup />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Login" element={<Login />} />
+
+    // <ApolloProvider client={client}>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Frontpage />} />
+          <Route path="/ChildSignup" element={<ChildSignup />} />
+          <Route path="/ParentSignup" element={<ParentSignup />} />
+          <Route path="/Home" element={<Home />} />
 
 
-            {/* grown up links  */}
-            <Route path="/Login" element={<Login />} />
-            <Route path="/GrownupArea" element={<GrownupArea />} />
-            <Route path="/Sub" element={<Sub />} />
+          {/* grown up links  */}
+          <Route path="/Login" element={<Login />} />
+          <Route path="/GrownupArea" element={<GrownupArea />} />
+          <Route path="/Sub" element={<Sub />} />
 
-            {/* questions links  */}
-            <Route path="/QOne" element={<QOne />} />
-            <Route path="/QTwo" element={<QTwo />} />
-            <Route path="/QThree" element={<QThree />} />
-            <Route path="/QFinished" element={<QFinished />} />
-          </Routes>
-        </div>
-      </Router>
-    </ApolloProvider>
+          {/* questions links  */}
+          <Route path="/QMood" element={<QMood />} />
+          <Route path="/QOne" element={<QOne />} />
+          <Route path="/QTwo" element={<QTwo />} />
+          <Route path="/QFinished" element={<QFinished />} />
+        </Routes>
+      </div>
+    </Router>
+    // </ApolloProvider>
+
   );
 }
 
