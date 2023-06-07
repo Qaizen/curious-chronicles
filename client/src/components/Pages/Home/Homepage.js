@@ -5,7 +5,7 @@ import MoodLine from "./MoodLine.js";
 
 function Home() {
     return (
-        <div className='backgroundHome'>
+        <div className='backgroundHome rowFront'>
             <BrownBox />
             <div className='col'>
 

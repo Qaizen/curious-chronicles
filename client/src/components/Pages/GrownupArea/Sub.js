@@ -3,23 +3,24 @@ import BigCircle from '../Home/BrownBox/BigCircle.js'
 
 
 function Sub() {
-    return (
-        <div className="background row">
+    return (<div>
+
+        <div className="background marginSub row">
             <div className='greyBox'>
 
                 <BigCircle />
                 <h2>Basic</h2>
-                <ul>
+                <ul >
                     <li>-10 themes</li>
                     <li>-Manual Backups</li>
                     <li>-All Pre-made
                         Prompts </li>
                 </ul>
             </div>
-            <div className='greyBox'>
+            <div className='yellowBox'>
 
                 <BigCircle />
-                <h2>Hero</h2>
+                <h2 className='titleSub'>Hero</h2>
                 <ul>
                     <li>-All themes</li>
                     <li>-Automatic Backups</li>
@@ -28,9 +29,13 @@ function Sub() {
                 </ul>
                 <button className='BtnRed'>Join</button>
             </div>
-
         </div>
+        <a href='/GrownupArea'>
 
+            <button className="BtnBrown">Leave</button>
+        </a>
+
+    </div>
     );
 }
 export default Sub;

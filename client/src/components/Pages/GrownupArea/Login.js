@@ -1,5 +1,4 @@
-;
-=======
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
@@ -42,18 +41,19 @@ const Login = (props) => {
     };
 
     return (
-        <main className="flex-row justify-center mb-4">
-            <div className="col-12 col-lg-10">
-                <div className="card">
-                    <h4 className="card-header bg-dark text-light p-2">Login</h4>
-                    <div className="card-body">
-                        {data ? (
-                            <p>
-                                Success! You may now head{' '}
-                                <Link to="/">back to the homepage.</Link>
-                            </p>
-                        ) : (
-                            <form onSubmit={handleFormSubmit}>
+        <main className="col">
+
+            <div className="marginLogin col">
+                {data ? (
+                    <p>
+                        Success! You may now head{' '}
+                        <Link to="/">back to the homepage.</Link>
+                    </p>
+                ) : (
+                    <div>
+
+                        <form onSubmit={handleFormSubmit} className='col'>
+                            <div className='row'>
                                 <input
                                     className="form-input"
                                     placeholder="Your email"
@@ -70,25 +70,39 @@ const Login = (props) => {
                                     value={formState.password}
                                     onChange={handleChange}
                                 />
-                                <button
-                                    className="btn btn-block btn-primary"
-                                    style={{ cursor: 'pointer' }}
-                                    type="submit"
-                                >
-                                    Submit
-                                </button>
-                            </form>
-                        )}
-
-                        {error && (
-                            <div className="my-3 p-3 bg-danger text-white">
-                                {error.message}
                             </div>
-                        )}
+
+                            <button
+                                className="BtnRed"
+                                style={{ cursor: 'pointer' }}
+                                type="submit"
+                            >
+                                Submit
+                            </button>
+
+                        </form>
+                        <a href='/GrownupArea'>
+
+                            <button
+                                className="BtnRed"
+                                style={{ cursor: 'pointer' }}
+                                type="submit"
+                            >
+                                delete later
+                            </button>
+                        </a>
                     </div>
-                </div>
+                )}
+
+                {error && (
+                    <div className="Mali">
+                        {error.message}
+                    </div>
+                )}
             </div>
-        </main>
+
+
+        </main >
     );
 };
 
