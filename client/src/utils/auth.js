@@ -38,7 +38,7 @@ class AuthService {
     }
 }
 
-export default AuthService();
+export default new AuthService();
 /* export default new AuthService(); when calling an instance of AuthService we do it as shown below:
 import AuthService from './AuthService';
 const authService = new AuthService();

@@ -64,29 +64,31 @@ function App() {
   const [page, setPage] = useState("splash");
 
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Frontpage />} />
-          <Route path="/ChildSignup" element={<ChildSignup />} />
-          <Route path="/ParentSignup" element={<ParentSignup />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Login" element={<Login />} />
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Frontpage />} />
+            <Route path="/ChildSignup" element={<ChildSignup />} />
+            <Route path="/ParentSignup" element={<ParentSignup />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/Login" element={<Login />} />
 
 
-          {/* grown up links  */}
-          <Route path="/Login" element={<Login />} />
-          <Route path="/GrownupArea" element={<GrownupArea />} />
-          <Route path="/Sub" element={<Sub />} />
+            {/* grown up links  */}
+            <Route path="/Login" element={<Login />} />
+            <Route path="/GrownupArea" element={<GrownupArea />} />
+            <Route path="/Sub" element={<Sub />} />
 
-          {/* questions links  */}
-          <Route path="/QOne" element={<QOne />} />
-          <Route path="/QTwo" element={<QTwo />} />
-          <Route path="/QThree" element={<QThree />} />
-          <Route path="/QFinished" element={<QFinished />} />
-        </Routes>
-      </div>
-    </Router>
+            {/* questions links  */}
+            <Route path="/QOne" element={<QOne />} />
+            <Route path="/QTwo" element={<QTwo />} />
+            <Route path="/QThree" element={<QThree />} />
+            <Route path="/QFinished" element={<QFinished />} />
+          </Routes>
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 
