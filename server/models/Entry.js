@@ -1,4 +1,6 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
+const Child = require('./Child');
+
 
 const entrySchema = new Schema({
     ChildId: [
@@ -28,4 +30,7 @@ const entrySchema = new Schema({
     }
 });
 
-module.exports = entrySchema;
+const Entry = model('Entries', entrySchema);
+
+
+module.exports = Entry;

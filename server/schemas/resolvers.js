@@ -1,8 +1,49 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
-const { Parent } = require('../models');
+const { Parent, Child, Entry } = require('../models');
 
 const resolvers = {
+  Query: {
+    me: async (parent, args, context) => {
+      if (context.user) {
+        try {
+          const userData = await Parent.findOne({ _id: context.user.id })
+          return userData
+
+        } catch (error) {
+          throw error
+        }
+      }
+      throw new AuthenticationError('Please log in!')
+    },
+    parents: async () => {
+      try {
+        const parents = await Parent.find();
+        return parents;
+      } catch (error) {
+        throw new Error('Failed to fetch parents')
+      }
+    },
+
+    // children: async () => {
+    //   try {
+    //     const children = await Child.find();
+    //     return children;
+    //   } catch (error) {
+    //     throw new Error('Failed to fetch children')
+    //   }
+    // },
+
+    // entries: async () => {
+    //   try {
+    //     const entries = await Entry.find();
+    //     return entries;
+    //   } catch (error) {
+    //     throw new Error('Failed to fetch entries')
+    //   }
+    // }
+
+  },
   Mutation: {
     addUser: async (parent, args) => {
       // First, we create the user
