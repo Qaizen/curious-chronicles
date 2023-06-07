@@ -25,7 +25,7 @@ import Home from './components/Pages/Home/Homepage.js';
 
 //Grown up imports
 import Login from './components/Pages/GrownupArea/Login.js'
-import GrownupArea from './components/Pages/GrownupArea/GrowupArea.js'
+import GrownupArea from './components/Pages/GrownupArea/GrownupArea.js'
 import Sub from './components/Pages/GrownupArea/Sub.js'
 
 

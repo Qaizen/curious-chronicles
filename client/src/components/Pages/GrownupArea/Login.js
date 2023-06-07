@@ -1,5 +1,5 @@
 
-function BigCircle() {
+function Login() {
     return (
         <div className=" BackgroundQ col">
 
@@ -31,7 +31,7 @@ function BigCircle() {
                 //onChange={handleChange}
                 />
             </form>
-            <a href='/GrowupArea'>
+            <a href='/GrownupArea'>
 
                 <button className="BtnRed">Submit</button>
             </a>
@@ -39,4 +39,4 @@ function BigCircle() {
         </div>
     );
 }
-export default BigCircle;
+export default Login;
