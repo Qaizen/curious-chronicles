@@ -65,30 +65,30 @@ function App() {
 
   return (
 
-    // <ApolloProvider client={client}>
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Frontpage />} />
-          <Route path="/ChildSignup" element={<ChildSignup />} />
-          <Route path="/ParentSignup" element={<ParentSignup />} />
-          <Route path="/Home" element={<Home />} />
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Frontpage />} />
+            <Route path="/ChildSignup" element={<ChildSignup />} />
+            <Route path="/ParentSignup" element={<ParentSignup />} />
+            <Route path="/Home" element={<Home />} />
 
 
-          {/* grown up links  */}
-          <Route path="/Login" element={<Login />} />
-          <Route path="/GrownupArea" element={<GrownupArea />} />
-          <Route path="/Sub" element={<Sub />} />
+            {/* grown up links  */}
+            <Route path="/Login" element={<Login />} />
+            <Route path="/GrownupArea" element={<GrownupArea />} />
+            <Route path="/Sub" element={<Sub />} />
 
-          {/* questions links  */}
-          <Route path="/QMood" element={<QMood />} />
-          <Route path="/QOne" element={<QOne />} />
-          <Route path="/QTwo" element={<QTwo />} />
-          <Route path="/QFinished" element={<QFinished />} />
-        </Routes>
-      </div>
-    </Router>
-    // </ApolloProvider>
+            {/* questions links  */}
+            <Route path="/QMood" element={<QMood />} />
+            <Route path="/QOne" element={<QOne />} />
+            <Route path="/QTwo" element={<QTwo />} />
+            <Route path="/QFinished" element={<QFinished />} />
+          </Routes>
+        </div>
+      </Router>
+    </ApolloProvider>
 
   );
 }
