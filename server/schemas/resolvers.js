@@ -55,8 +55,9 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       // Look up the user by the provided email address. Since the `email` field is unique, we know that only one person will exist with that email
+      console.log(email);
       const user = await Parent.findOne({ email });
-
+      console.log(user);
       // If there is no user with that email address, return an Authentication error stating so
       if (!user) {
         throw new AuthenticationError('No user found with this email address');
