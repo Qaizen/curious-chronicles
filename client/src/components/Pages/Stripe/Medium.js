@@ -5,7 +5,7 @@ import Message from './Message';
 import React, { useEffect, useState } from "react";
 
 
-export default function App() {
+export default function Medium() {
     let [message, setMessage] = useState('');
     let [success, setSuccess] = useState(false);
     let [sessionId, setSessionId] = useState('');

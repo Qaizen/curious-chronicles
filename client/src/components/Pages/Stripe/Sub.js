@@ -1,6 +1,7 @@
 import BigCircle from '../Home/BrownBox/BigCircle.js'
 
 
+
 function Sub() {
     return (<div>
 
@@ -35,7 +36,6 @@ function Sub() {
             </div>
         </div>
         <a href='/GrownupArea'>
-
 
             <button className="BtnBrown">Leave</button>
         </a>
