@@ -9,7 +9,6 @@ const childSchema = new Schema({
     },
     badges: {
         type: String,
-        required: true,
     },
     // we can add favorite color and theme later!
     theme: {
@@ -17,6 +16,13 @@ const childSchema = new Schema({
     },
     // dont know if this is needed
     grownups: [{ type: Schema.Types.ObjectId, ref: 'Parent' }],
+
+    entries: [
+        {
+            type:Schema.Types.ObjectId,
+            ref: 'Entries'
+        }
+    ]
 
 });
 

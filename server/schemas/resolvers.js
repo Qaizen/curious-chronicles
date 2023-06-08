@@ -16,6 +16,8 @@ const resolvers = {
       }
       throw new AuthenticationError('Please log in!')
     },
+    
+    //used for finding list of all parents
     parents: async () => {
       try {
         const parents = await Parent.find();
@@ -25,26 +27,69 @@ const resolvers = {
       }
     },
 
-    // children: async () => {
-    //   try {
-    //     const children = await Child.find();
-    //     return children;
-    //   } catch (error) {
-    //     throw new Error('Failed to fetch children')
-    //   }
-    // },
+    //used for finding list of single parent
+    parent: async (placeholder, { _id }) => {
+      try {
+        const oneParent = await Parent.findOne({ parent })
+          .select('-__v -password')
+          .populate('savedChildren')
+        return oneParent;
+      } catch (error) {
+        throw new Error('Failed to fetch parents')
+      }
+    },
 
-    // entries: async () => {
-    //   try {
-    //     const entries = await Entry.find();
-    //     return entries;
-    //   } catch (error) {
-    //     throw new Error('Failed to fetch entries')
-    //   }
-    // }
+    //used for finding list of all children
+    children: async () => {
+      try {
+        const children = await Child.find();
+        return children;
+      } catch (error) {
+        throw new Error('Failed to fetch children')
+      }
+    },
 
+    //used for finding single child
+    child: async (placeholder, { _id }) => {
+      try {
+        const oneChild = await Child.findOne({ _id })
+        .populate("entries")
+        return oneChild
+      } catch (error) {
+        console.log(error)
+        throw new Error('Failed to fetch one child')
+      }
+    },
+
+    // Probably don't need below entries code,
+    // cause when we want a child's entries
+    // it will be referred to through child by id
+
+    // currently using for testing
+    entries: async () => {
+      try {
+        const entries = await Entry.find();
+        return entries;
+      } catch (error) {
+        throw new Error('Failed to fetch entries')
+      }
+    }
   },
+
   Mutation: {
+    addEntry: async (parent, args) => {
+      // console.log("add entry start")
+      const entry = await Entry.create({...args});
+      // console.log(entry)
+      const childUpdate = await Child.findOneAndUpdate(
+        { _id: entry.ChildId },
+        { $push: { entries: entry._id } },
+        { new: true }
+      );
+      // console.log(childUpdate)
+      return entry;
+    },
+
     addUser: async (parent, args) => {
       // First, we create the user
       const user = await Parent.create(args);
@@ -53,6 +98,7 @@ const resolvers = {
       // Return an `Auth` object that consists of the signed token and user's information
       return { token, user };
     },
+    
     login: async (parent, { email, password }) => {
       // Look up the user by the provided email address. Since the `email` field is unique, we know that only one person will exist with that email
       const user = await Parent.findOne({ email });

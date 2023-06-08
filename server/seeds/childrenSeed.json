@@ -1,0 +1,27 @@
+[
+  {
+      "name": "Babygina",
+      "badges": "placeholderG",
+      "theme": "orange"
+  },
+  {
+      "name": "Babyleah",
+      "badges": "placeholderL",
+      "theme": "green"
+  },
+  {
+      "name": "Babyjohn",
+      "badges": "placeholderJ",
+      "theme": "blue"
+  },
+  {
+      "name": "Babysteve",
+      "badges": "placholderS",
+      "theme": "yellow"
+  },
+  {
+      "name": "Babypatty",
+      "badges": "placeholderP",
+      "theme": "red"
+  }
+]
