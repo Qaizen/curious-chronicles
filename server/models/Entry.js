@@ -1,33 +1,21 @@
 const { Schema, model } = require('mongoose');
-const Child = require('./Child');
 
 
 const entrySchema = new Schema({
-    ChildId: [
+    ChildId:
         {
             type: String,
             required: true,
+            unique: false,
         },
-    ],
     mood: {
-        type: String, //number maybe?
+        type: String, //maybe change to a number scale system 1-5. sad = 1, happy = 5
         required: true,
     },
     responseOne: {
         type: String,
         required: true,
     },
-
-    responseTwo: {
-        type: String,
-        required: true,
-    },
-    responseThree: {
-        type: String,
-    },
-    images: {
-        type: String,
-    }
 });
 
 const Entry = model('Entries', entrySchema);
