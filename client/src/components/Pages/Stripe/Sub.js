@@ -1,7 +1,6 @@
 import BigCircle from '../Home/BrownBox/BigCircle.js'
 
 
-
 function Sub() {
     return (<div>
 
@@ -29,12 +28,14 @@ function Sub() {
                 </ul>
                 <h5>$12 / month</h5>
                 <form action="/create-checkout-session" method="POST">
+                    {/* Add a hidden field with the lookup_key of your Price */}
                     <input type="hidden" name="lookup_key" value="{{PRICE_LOOKUP_KEY}}" />
                     <button id="checkout-and-portal-button" type="submit" className='BtnRed'>Join</button>
                 </form>
             </div>
         </div>
         <a href='/GrownupArea'>
+
 
             <button className="BtnBrown">Leave</button>
         </a>

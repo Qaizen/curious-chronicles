@@ -25,14 +25,22 @@ import Home from './components/Pages/Home/Homepage.js';
 //Grown up imports
 import Login from './components/Pages/GrownupArea/Login.js'
 import GrownupArea from './components/Pages/GrownupArea/GrownupArea.js'
-import Sub from './components/Pages/GrownupArea/Sub.js'
 
 
-//question inports
+//question imports
 import QMood from './components/Pages/Questions/QMood.js'
 import QOne from './components/Pages/Questions/QOne.js'
 import QTwo from './components/Pages/Questions/QTwo.js'
 import QFinished from './components/Pages/Questions/QFinished.js'
+
+
+// Stripe Imports
+import Sub from './components/Pages/Stripe/Sub.js'
+
+
+
+
+
 
 // need to add auth here!!!!
 // Construct our main GraphQL API endpoint
@@ -78,13 +86,17 @@ function App() {
             {/* grown up links  */}
             <Route path="/Login" element={<Login />} />
             <Route path="/GrownupArea" element={<GrownupArea />} />
-            <Route path="/Sub" element={<Sub />} />
 
             {/* questions links  */}
             <Route path="/QMood" element={<QMood />} />
             <Route path="/QOne" element={<QOne />} />
             <Route path="/QTwo" element={<QTwo />} />
             <Route path="/QFinished" element={<QFinished />} />
+
+            {/* Stripe Links */}
+            <Route path="/Sub" element={<Sub />} />
+
+
           </Routes>
         </div>
       </Router>
