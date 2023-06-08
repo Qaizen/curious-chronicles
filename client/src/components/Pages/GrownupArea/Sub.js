@@ -27,7 +27,11 @@ function Sub() {
                     <li>-Advanced Statistics </li>
                     <li>-Custom Prompts </li>
                 </ul>
-                <button className='BtnRed'>Join</button>
+                <h5>$12 / month</h5>
+                <form action="/create-checkout-session" method="POST">
+                    <input type="hidden" name="lookup_key" value="{{PRICE_LOOKUP_KEY}}" />
+                    <button id="checkout-and-portal-button" type="submit" className='BtnRed'>Join</button>
+                </form>
             </div>
         </div>
         <a href='/GrownupArea'>
