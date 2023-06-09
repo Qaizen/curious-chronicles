@@ -8,9 +8,9 @@ function Frontpage() {
         Welcome to a world of understand and creativity!
       </h2>
       <div className="row">
-          <img className="imgBook" src="./Photos/bunny.png" alt="A bunny" />
-          <img className="imgBook" src="./Photos/Book.png" alt="A book" />
-          <img className="imgBook" src="./Photos/giraffe.png" alt="A giraffe" />
+          <img className="frontPageImgBook" src="./Photos/bunny.png" alt="A bunny" />
+          <img className="frontPageImgBook" src="./Photos/Book.png" alt="A book" />
+          <img className="frontPageImgBook" src="./Photos/giraffe.png" alt="A giraffe" />
       </div>
       <div className="divGir">
         <h3 className="subName">

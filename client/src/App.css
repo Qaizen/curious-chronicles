@@ -121,10 +121,16 @@
   padding: 10px;
 }
 
-.imgBook {
+.frontPageImgBook {
   max-width: 60%;
   height: auto;
   margin: 0.5rem;
+}
+
+.imgBook {
+  max-width: 400px;
+  max-height: 400px;
+
 }
 
 .subName {
@@ -428,7 +434,7 @@
     width: 40%;
   }
 
-  .imgBook {
+  .frontPageImgBook {
     max-width: 100%;
   }
 }
