@@ -81,6 +81,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  max-width: 30rem;
+  margin: 0 auto;
 }
 
 .col {
@@ -101,9 +103,8 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-
   align-items: center;
-
+  overflow: hidden;
 }
 
 .logoMark {
@@ -121,9 +122,9 @@
 }
 
 .imgBook {
-  max-width: 400px;
-  max-height: 400px;
-
+  max-width: 60%;
+  height: auto;
+  margin: 0.5rem;
 }
 
 .subName {
@@ -420,3 +421,14 @@
 /*
     Sub
 */
+
+
+@media (max-width: 768px) {
+  .row {
+    width: 40%;
+  }
+
+  .imgBook {
+    max-width: 100%;
+  }
+}
