@@ -1,8 +1,9 @@
 
 ////////////////////// stripe
 require('dotenv').config()
+const stripe = require('stripe');
 
-const stripe = require('stripe')('sk_test_51NGW5hGa0dfhEuOuraRQam5xmr34wFJq17sRIk1GNTs5wQQKI2niGsTQL7hy4nxGfFd5mbH7QX3dscxRkgDWZog500R1iasi2L')
+// const stripe = require('stripe')('sk_test_51NGW5hGa0dfhEuOuraRQam5xmr34wFJq17sRIk1GNTs5wQQKI2niGsTQL7hy4nxGfFd5mbH7QX3dscxRkgDWZog500R1iasi2L')
 
 
 
