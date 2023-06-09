@@ -1,4 +1,4 @@
-const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError, ApolloError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 const { Parent, Child, Entry } = require('../models');
 
@@ -46,7 +46,17 @@ const resolvers = {
   },
   Mutation: {
     addUser: async (parent, args) => {
-      // First, we create the user
+
+      //First we store the email address in a variable email
+      const { email } = args;
+
+      //We check if the email address has been already used
+      const existingUser = await Parent.findOne({ email });
+      if (existingUser) {
+        throw new ApolloError('Email address already in use!', 'EMAIL_IN_USE');
+      }
+
+      // Then, we create the user
       const user = await Parent.create(args);
       // To reduce friction for the user, we immediately sign a JSON Web Token and log the user in after they are created
       const token = signToken(user);

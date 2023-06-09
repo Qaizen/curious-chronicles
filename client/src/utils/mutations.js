@@ -21,6 +21,9 @@ export const ADD_USER = gql`
         _id
         name
         email
+        savedChildren {
+          name
+        }
       }
     }
   }

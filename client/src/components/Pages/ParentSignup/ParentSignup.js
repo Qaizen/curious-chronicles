@@ -1,46 +1,65 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { useMutation } from '@apollo/client';
-// import { LOGIN_USER } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../../../utils/mutations.js';
 
-// import Auth from '../utils/auth';
+import Auth from '../../../utils/auth.js';
 
 const ParentSignup = (props) => {
-  const [formState, setFormState] = useState({ fname: '', lname: '', email: '', password: '' });
-  // const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [formState, setFormState] = useState({ name: '', email: '', password: '', confirmPassword: '', showPassword: false, });
+  const [errorState, setErrorState] = useState('');
+
+  const [addUser, { error, data }] = useMutation(ADD_USER);
 
   // update state based on form input changes
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
+  const handleChange = (event) => {
+    const { name, value, type, checked } = event.target;
 
-  //   setFormState({
-  //     ...formState,
-  //     [name]: value,
-  //   });
-  // };
+    if (type === 'checkbox') {
+      setFormState({
+        ...formState,
+        [name]: checked,
+      });
+    } else {
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    }
+  };
 
   // // submit form
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-  //   console.log(formState);
-  //   try {
-  //     const { data } = await login({
-  //       variables: { ...formState },
-  //     });
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
 
-  //     Auth.login(data.login.token);
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
+    try {
 
-  // clear form values
-  // setFormState({
-  //   fname: '',
-  //   lname: '',
-  //   email: '',
-  //   password: '',
-  // });
+      if (formState.password !== formState.confirmPassword) {
+        setErrorState('Passwords do not match!');
+        return;
+      }
+
+      const { data } = await addUser({
+        variables: formState,
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+      setErrorState(e.message); // Set the error message from the mutation
+    }
+
+    // clear form values
+    setFormState({
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    });
+  };
+
 
   return (
 
@@ -50,53 +69,68 @@ const ParentSignup = (props) => {
         <div className='col Mali'>
 
           <h1 className='parTitle'>This stuff is for grownups!</h1>
-          <form className='col  form'>
-            <div className='row passwordInput'>
-
-              <input
-                className="form-input"
-                placeholder="Password"
-                name="fpassword"
-                type="password"
-                value={formState.fpassword}
-              />
-              <input
-                className="form-input"
-                placeholder="Confirm your password"
-                name="password"
-                type="password"
-              // value={formState.password}
-              // onChange={handleChange}
-              />
-            </div>
+          <form onSubmit={handleFormSubmit} className='col  form'>
+            <input
+              className="form-input emailFrom"
+              placeholder="Your full name"
+              name="name"
+              type="text"
+              value={formState.name}
+              onChange={handleChange}
+            />
             <input
               className="form-input emailFrom"
               placeholder="Your email"
               name="email"
               type="email"
               value={formState.email}
-            //onChange={handleChange}
+              onChange={handleChange}
             />
-          </form>
-          <a href='/ChildSignup'>
-
+            <div className='row passwordInput'>
+              <input
+                className="form-input"
+                placeholder="Password"
+                name="password"
+                type={formState.showPassword ? 'text' : 'password'}
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                placeholder="Confirm your password"
+                name="confirmPassword"
+                type={formState.showPassword ? 'text' : 'password'}
+                value={formState.confirmPassword}
+                onChange={handleChange}
+              />
+              <label>
+                <input
+                  type="checkbox"
+                  name="showPassword"
+                  checked={formState.showPassword || false}
+                  onChange={handleChange}
+                />
+                Show Password
+              </label>
+            </div>
+            {errorState && (
+              <div className="my-3 p-3 bg-danger text-white" style={{ color: 'red' }}>
+                {errorState}
+              </div>
+            )}
             <button
               className="btn btn-block btn-primary BtnRed"
               style={{ cursor: 'pointer' }}
-
-
+              type="submit"
             >
               Submit
             </button>
-          </a>
+          </form>
+          {/* <a href='/ChildSignup'>
+          </a> */}
+
           <p>Already have an account? <Link to="/login">Login here</Link></p>
 
-          {/* 
-          {error && (
-            <div className="my-3 p-3 bg-danger text-white">
-            {error.message}
-            </div>
-          )} */}
         </div>
       </div>
     </div>
@@ -105,4 +139,4 @@ const ParentSignup = (props) => {
 };
 
 
-export default ParentSignup
+export default ParentSignup;
