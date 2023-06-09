@@ -78,12 +78,12 @@ function App() {
             {/* grown up links  */}
             <Route path="/Login" element={<Login />} />
             <Route path="/GrownupArea" element={<GrownupArea />} />
-            <Route path="/Sub" element={<Sub />} />
+            <Route path="/Sub" element={<Sub />} /> {/*Subscription page*/}
 
             {/* questions links  */}
-            <Route path="/QMood" element={<QMood />} />
-            <Route path="/QOne" element={<QOne />} />
-            <Route path="/QTwo" element={<QTwo />} />
+            <Route path="/QMood" element={<QMood />} /> 
+            <Route path="/QOne" element={<QOne />} /> {/*Why do you feel that way page*/}
+            <Route path="/QTwo" element={<QTwo />} /> {/*Thing the kid is good at page*/}
             <Route path="/QFinished" element={<QFinished />} />
           </Routes>
         </div>
