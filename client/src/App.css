@@ -10,8 +10,6 @@
   --offblack: #61413F;
 }
 
-
-
 .Gochi {
   font-family: 'Gochi Hand',
     cursive;
@@ -81,6 +79,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  max-width: 30rem;
+  margin: 0 auto;
 }
 
 .col {
@@ -101,9 +101,8 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-
   align-items: center;
-
+  min-height: 100vh;
 }
 
 .logoMark {
@@ -118,6 +117,12 @@
   font-family: 'Mali', cursive, italic;
   font-size: 30px;
   padding: 10px;
+}
+
+.frontPageImgBook {
+  max-width: 60%;
+  height: auto;
+  margin: 0.5rem;
 }
 
 .imgBook {
@@ -420,3 +425,14 @@
 /*
     Sub
 */
+
+
+@media (max-width: 768px) {
+  .row {
+    width: 35%;
+  }
+
+  .frontPageImgBook {
+    max-width: 100%;
+  }
+}
