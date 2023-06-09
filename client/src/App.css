@@ -10,8 +10,6 @@
   --offblack: #61413F;
 }
 
-
-
 .Gochi {
   font-family: 'Gochi Hand',
     cursive;
@@ -104,7 +102,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .logoMark {
@@ -431,7 +429,7 @@
 
 @media (max-width: 768px) {
   .row {
-    width: 40%;
+    width: 35%;
   }
 
   .frontPageImgBook {
