@@ -1,9 +1,9 @@
 
 ////////////////////// stripe
 require('dotenv').config()
-const stripe = require('stripe');
+//const stripe = require('stripe');
 
-// const stripe = require('stripe')('sk_test_51NGW5hGa0dfhEuOuraRQam5xmr34wFJq17sRIk1GNTs5wQQKI2niGsTQL7hy4nxGfFd5mbH7QX3dscxRkgDWZog500R1iasi2L')
+const stripe = require('stripe')('sk_test_51NGW5hGa0dfhEuOuraRQam5xmr34wFJq17sRIk1GNTs5wQQKI2niGsTQL7hy4nxGfFd5mbH7QX3dscxRkgDWZog500R1iasi2L')
 
 
 
@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 
-const YOUR_DOMAIN = 'Change later';
+const YOUR_DOMAIN = 'https://curious-chronicles.herokuapp.com';
 
 
 ////////////////////// stripe
@@ -72,8 +72,8 @@ app.post('/create-checkout-session', async (req, res) => {
     ],
     mode: 'subscription',
     //Supply success and cancel URLs
-    success_url: `${YOUR_DOMAIN}/?success=true&session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+    success_url: `https://curious-chronicles.herokuapp.com//?success=true&session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `https://curious-chronicles.herokuapp.com/?canceled=true`,
   });
 
   //Redirect to Checkout
@@ -90,7 +90,8 @@ app.post('/create-portal-session', async (req, res) => {
   //Create a customer portal session
   // This is the url to which the customer will be redirected when they are done
   // managing their billing with the portal.
-  const returnUrl = YOUR_DOMAIN;
+  // change to home later
+  const returnUrl = 'https://curious-chronicles.herokuapp.com/';
 
   const portalSession = await stripe.billingPortal.sessions.create({
     customer: checkoutSession.customer,
