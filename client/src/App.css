@@ -147,8 +147,30 @@
     parent-signup-page
 */
 
+.parentRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+.grownUpContainer {
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
+  height: auto;
+}
+
+.grownUpImg {
+  max-width: 100%;
+  min-width: 12.5rem;
+  height: auto;
+  object-fit: contain;
+}
+
+
 .Signup-body {
   padding: 85px;
+  display: flex;
 }
 
 .parTitle {
@@ -166,11 +188,18 @@
   padding: 20px;
 }
 
-.passwordInput {}
+.passwordInput {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 2.5rem;
+}
 
 .form {
+  display: flex;
   max-width: 600px;
   margin: 20px;
+  justify-content: flex-start;
 }
 
 .emailFrom {
