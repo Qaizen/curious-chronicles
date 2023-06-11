@@ -16,7 +16,7 @@ const resolvers = {
       }
       throw new AuthenticationError('Please log in!')
     },
-    
+
     //used for finding list of all parents
     parents: async () => {
       try {
@@ -53,7 +53,7 @@ const resolvers = {
     child: async (placeholder, { _id }) => {
       try {
         const oneChild = await Child.findOne({ _id })
-        .populate("entries")
+          .populate("entries")
         return oneChild
       } catch (error) {
         console.log(error)
@@ -79,7 +79,7 @@ const resolvers = {
   Mutation: {
     addEntry: async (parent, args) => {
       // console.log("add entry start")
-      const entry = await Entry.create({...args});
+      const entry = await Entry.create({ ...args });
       // console.log(entry)
       const childUpdate = await Child.findOneAndUpdate(
         { _id: entry.ChildId },
@@ -108,7 +108,7 @@ const resolvers = {
       // Return an `Auth` object that consists of the signed token and user's information
       return { token, user };
     },
-    
+
     login: async (parent, { email, password }) => {
       // Look up the user by the provided email address. Since the `email` field is unique, we know that only one person will exist with that email
       console.log(email);
@@ -133,6 +133,40 @@ const resolvers = {
       // Return an `Auth` object that consists of the signed token and user's information
       return { token, user };
     },
+
+    createChild: async (parent, args, context) => {
+      try {
+        const { name, badges, theme } = args;
+        const parentId = context.user?._id;
+
+        if (!context.user) {
+          throw Error('Parent not found');
+        }
+
+        // Create a new child instance
+        const child = new Child({
+          name,
+          badges,
+          theme,
+          grownups: [parentId],
+        });
+
+        // Save the child to the database
+        const createdChild = await child.save();
+
+        await Parent.findByIdAndUpdate(parentId, {
+          $addToSet: {
+            savedChildren: createdChild._id
+          }
+        })
+
+        return createdChild;
+
+      } catch (error) {
+        throw Error(error)
+      }
+    },
+
   },
 };
 

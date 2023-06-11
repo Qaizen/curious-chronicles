@@ -5,7 +5,6 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     email: String!
-    password: String!
     savedChildren: [Child]
   }
 

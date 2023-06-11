@@ -1,4 +1,42 @@
+// import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
+// import { useMutation } from '@apollo/client';
+// // import { ADD_CHILD } from "../../../utils/mutations.js";
+// import Auth from '../../../utils/auth';
+
 function ChildSignup() {
+    // const [formState, setFormState] = useState({
+    //     name: '',
+    // });
+    // // const [addChild, { error, data }] = useMutation(ADD_CHILD);
+
+    // const parentId = Auth.getUser().id; // Get the parent ID from the logged-in user
+
+    // const handleChange = (event) => {
+    //     const { name, value } = event.target;
+
+    //     setFormState({
+    //         ...formState,
+    //         [name]: value,
+    //     });
+    // };
+
+    // const handleFormSubmit = async (event) => {
+    //     event.preventDefault();
+
+    //     // try {
+    //     //     const { data } = await addChild({
+    //     //         variables: {
+    //     //             parentId: parentId, // Pass the parent ID as a variable
+    //     //             name: formState.name,
+    //     //         },
+    //     //     });
+    //     // } catch (error) {
+    //     //     console.log(error);
+    //     // }
+    // };
+
+
     return (
         <div className="Signup-body backgroundY" >
 
@@ -8,20 +46,22 @@ function ChildSignup() {
                 <div >
 
                     <h1 className="parTitle Mali">Now for the fun part!</h1>
-                    <a href='/Home'>
-                        <div className='col '>
+                    <div className='col '>
 
-                            <form className='col form'>
+                        <form className='col form'>
 
-                                <label className="label" >Your Name!</label>
-                                <input
-                                    className="childform-input"
-                                />
+                            <label className="label" >Your Name!</label>
+                            <input
+                                className="childform-input"
+                                name="name"
+                            // value={formState.name}
+                            // onChange={handleChange}
+                            />
 
-                            </form>
-                            <button className="BtnRed">All Done!</button>
-                        </div>
-                    </a>
+                        </form>
+                        {/* <button className="BtnRed" onClick={handleFormSubmit}>All Done!</button> */}
+                        <button className="BtnRed" >All Done!</button>
+                    </div>
                 </div>
 
             </div >
