@@ -7,9 +7,11 @@ const childSchema = new Schema({
         type: String,
         required: true,
     },
-    badges: {
+    badges:
+    {
         type: String,
-    },
+    }
+    ,
     // we can add favorite color and theme later!
     theme: {
         type: String,
@@ -19,12 +21,16 @@ const childSchema = new Schema({
 
     entries: [
         {
-            type:Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Entries'
         }
     ]
 
-});
+},
+    {
+        timestamps: true
+    }
+);
 
 const Child = model('Child', childSchema);
 

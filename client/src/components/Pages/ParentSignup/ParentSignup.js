@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../../utils/mutations.js";
 
@@ -16,6 +16,7 @@ const ParentSignup = (props) => {
   const [errorState, setErrorState] = useState("");
 
   const [addUser, { error, data }] = useMutation(ADD_USER);
+  const navigate = useNavigate();
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -37,8 +38,6 @@ const ParentSignup = (props) => {
   // // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
-
     try {
       if (formState.password !== formState.confirmPassword) {
         setErrorState("Passwords do not match!");
@@ -49,19 +48,27 @@ const ParentSignup = (props) => {
         variables: formState,
       });
 
+      setFormState({
+        ...formState,
+      });
+
       Auth.login(data.addUser.token);
+
+      // Redirect to ChildSignup
+      navigate(`/ChildSignup`);
     } catch (e) {
       console.error(e);
       setErrorState(e.message); // Set the error message from the mutation
     }
 
-    // clear form values
-    setFormState({
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    });
+    // // clear form values
+    // setFormState({
+    //   name: "",
+    //   email: "",
+    //   password: "",
+    //   confirmPassword: "",
+    //   parentId: "",
+    // });
   };
 
   return (
@@ -112,8 +119,8 @@ const ParentSignup = (props) => {
               />
               <label>
                 <input
-                  type="checkbox"
                   name="showPassword"
+                  type="checkbox"
                   checked={formState.showPassword || false}
                   onChange={handleChange}
                 />
