@@ -47,10 +47,35 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 
+
+const calculateOrderAmount = (items) => {
+  // Replace this constant with a calculation of the order's amount
+  // Calculate the order total on the server to prevent
+  // people from directly manipulating the amount on the client
+  return 1;
+};
+
+app.post("/create-payment-intent", async (req, res) => {
+  const { items } = req.body;
+
+  // Create a PaymentIntent with the order amount and currency
+  const paymentIntent = await stripe.paymentIntents.create({
+    //Configure payment methods
+    amount: calculateOrderAmount(items),
+    currency: "usd",
+    automatic_payment_methods: {
+      enabled: true,
+    },
+  });
+
+  res.send({
+    clientSecret: paymentIntent.client_secret,
+  });
+});
+
 const YOUR_DOMAIN = 'https://curious-chronicles.herokuapp.com';
 
 
-////////////////////// stripe
 
 app.post('/create-checkout-session', async (req, res) => {
   const prices = await stripe.prices.list({

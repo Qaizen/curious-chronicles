@@ -8,7 +8,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //adds CSS
@@ -36,6 +36,8 @@ import QFinished from './components/Pages/Questions/QFinished.js'
 
 // Stripe Imports
 import Sub from './components/Pages/Stripe/Sub.js'
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 
 
@@ -67,9 +69,12 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const stripePromise = loadStripe("pk_test_51NGW5hGa0dfhEuOuwIeTm5qdHGSsUA2bk6fgFyDixDKGA8GnqaQYAtJcmbQkwfsRbwAaZjbhP61IXtwkhKiHksbP00i5Iugqla");
+
+
+
 
 function App() {
-  // const [page, setPage] = useState("splash");
 
   return (
 
@@ -95,6 +100,7 @@ function App() {
 
             {/* Stripe Links */}
             <Route path="/Sub" element={<Sub />} />
+
 
 
           </Routes>
