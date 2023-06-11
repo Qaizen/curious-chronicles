@@ -33,11 +33,11 @@ import QOne from './components/Pages/Questions/QOne.js'
 import QTwo from './components/Pages/Questions/QTwo.js'
 import QFinished from './components/Pages/Questions/QFinished.js'
 
+import Sub from './components/Pages/old/Sub';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import CheckoutForm from './components/Pages/NewStripe/CheckoutForm';
 
-// Stripe Imports
-import Sub from './components/Pages/Stripe/Sub.js'
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
 
 
 
@@ -69,15 +69,23 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const stripePromise = loadStripe("pk_test_51NGW5hGa0dfhEuOuwIeTm5qdHGSsUA2bk6fgFyDixDKGA8GnqaQYAtJcmbQkwfsRbwAaZjbhP61IXtwkhKiHksbP00i5Iugqla");
+//stripe
 
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe('pk_test_51NGW5hGa0dfhEuOuwIeTm5qdHGSsUA2bk6fgFyDixDKGA8GnqaQYAtJcmbQkwfsRbwAaZjbhP61IXtwkhKiHksbP00i5Iugqla');
+
+
+//stripe
 
 
 
 function App() {
+  const options = {
+    clientSecret: '{{ CLIENT_SECRET }}',
+  };
 
   return (
-
     <ApolloProvider client={client}>
       <Router>
         <div className="App">
@@ -86,28 +94,25 @@ function App() {
             <Route path="/ChildSignup" element={<ChildSignup />} />
             <Route path="/ParentSignup" element={<ParentSignup />} />
             <Route path="/Home" element={<Home />} />
-
-
-            {/* grown up links  */}
             <Route path="/Login" element={<Login />} />
+            {/* grown up links  */}
             <Route path="/GrownupArea" element={<GrownupArea />} />
-
             {/* questions links  */}
             <Route path="/QMood" element={<QMood />} />
             <Route path="/QOne" element={<QOne />} />
             <Route path="/QTwo" element={<QTwo />} />
             <Route path="/QFinished" element={<QFinished />} />
-
             {/* Stripe Links */}
             <Route path="/Sub" element={<Sub />} />
-
-
-
+            <Route path="/Checkout">
+              <Elements stripe={stripePromise} options={options}>
+                <CheckoutForm />
+              </Elements>
+            </Route>
           </Routes>
         </div>
       </Router>
     </ApolloProvider>
-
   );
 }
 
