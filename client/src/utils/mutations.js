@@ -21,7 +21,24 @@ export const ADD_USER = gql`
         _id
         name
         email
+        savedChildren {
+          name
+        }
       }
     }
   }
+`;
+
+export const ADD_CHILD = gql`
+  mutation Mutation($name: String!, $badges: String, $theme: String) {
+  createChild(name: $name, badges: $badges, theme: $theme) {
+    _id
+    name
+    badges
+    grownups {
+      _id
+    }
+    theme
+  }
+}
 `;

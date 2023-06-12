@@ -1,15 +1,7 @@
-
-
-// // const client = new ApolloClient({
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useQuery } from "@apollo/client";
+import { GET_ME } from "./utils/queries.js"
 
 //adds CSS
 import './Reset.css';
@@ -38,52 +30,24 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import CheckoutForm from './components/Pages/NewStripe/CheckoutForm';
 
-
-
-
-
-
-
-// need to add auth here!!!!
-// Construct our main GraphQL API endpoint
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
-
-//Construct request middleware that will attach the JWT token to every request as an `authorization` header
-const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
-  const token = localStorage.getItem('id_token');
-  // return the headers to the context so httpLink can read them
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
-});
-
-const client = new ApolloClient({
-  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
+function App() {
+    const { data } = useQuery(GET_ME);
+  const userMe = data?.me;
 
 //stripe
-
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe('pk_test_51NGW5hGa0dfhEuOuwIeTm5qdHGSsUA2bk6fgFyDixDKGA8GnqaQYAtJcmbQkwfsRbwAaZjbhP61IXtwkhKiHksbP00i5Iugqla');
 
+  // const [current, setCurrent] = useState('/');
+  // const location = useLocation();
 
+  // useEffect(() => {
+  //   setCurrent(location.pathname);
+  // }, [location]);
 //stripe
-
-
-
-function App() {
   const options = {
     clientSecret: '{{ CLIENT_SECRET }}',
-  };
 
   return (
     <ApolloProvider client={client}>

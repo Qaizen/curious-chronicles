@@ -1,108 +1,169 @@
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../../../utils/mutations.js";
 
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-// import { useMutation } from '@apollo/client';
-// import { LOGIN_USER } from '../utils/mutations';
-
-// import Auth from '../utils/auth';
+import Auth from "../../../utils/auth.js";
 
 const ParentSignup = (props) => {
-  const [formState, setFormState] = useState({ fname: '', lname: '', email: '', password: '' });
-  // const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    showPassword: false,
+  });
+  const [errorState, setErrorState] = useState("");
+
+  const [addUser, { error, data }] = useMutation(ADD_USER);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (Auth.loggedIn()) {
+      navigate('/ChildSignup');
+    }
+  }, [navigate]);
 
   // update state based on form input changes
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
+  const handleChange = (event) => {
+    const { name, value, type, checked } = event.target;
 
-  //   setFormState({
-  //     ...formState,
-  //     [name]: value,
-  //   });
-  // };
+    if (type === "checkbox") {
+      setFormState({
+        ...formState,
+        [name]: checked,
+      });
+    } else {
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    }
+  };
 
   // // submit form
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-  //   console.log(formState);
-  //   try {
-  //     const { data } = await login({
-  //       variables: { ...formState },
-  //     });
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      if (formState.password !== formState.confirmPassword) {
+        setErrorState("Passwords do not match!");
+        return;
+      }
 
-  //     Auth.login(data.login.token);
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
+      const { data } = await addUser({
+        variables: formState,
+      });
 
-  // clear form values
-  // setFormState({
-  //   fname: '',
-  //   lname: '',
-  //   email: '',
-  //   password: '',
-  // });
+      setFormState({
+        ...formState,
+      });
+
+      console.log("data");
+      console.log(data);
+
+      // Auth.login(data.addUser.token, () => {
+      //   // Redirect to ChildSignup
+      //   navigate(`/ChildSignup`);
+      // });
+
+    } catch (e) {
+      console.error(e);
+      setErrorState(e.message); // Set the error message from the mutation
+    }
+
+    // // clear form values
+    // setFormState({
+    //   name: "",
+    //   email: "",
+    //   password: "",
+    //   confirmPassword: "",
+    //   parentId: "",
+    // });
+  };
 
   return (
-
     <div className="Signup-body">
-      <div className='row'>
-        <img className="imgBook" src='./Photos/Grownup.png' alt="A bunny" />
-        <div className='col Mali'>
-
-          <h1 className='parTitle'>This stuff is for grownups!</h1>
-          <form className='col  form'>
-            <div className='row passwordInput'>
-
-              <input
-                className="form-input"
-                placeholder="Password"
-                name="fpassword"
-                type="password"
-                value={formState.fpassword}
-              />
-              <input
-                className="form-input"
-                placeholder="Confirm your password"
-                name="password"
-                type="password"
-              // value={formState.password}
-              // onChange={handleChange}
-              />
-            </div>
+      <div className="parentRow">
+        <div className="grownUpContainer">
+          <img
+            className="grownUpImg"
+            src="./Photos/Grownup.png"
+            alt="Girl Magnifying Glass"
+          />
+        </div>
+        <div className="col Mali">
+          <h1 className="parTitle">This stuff is for grownups!</h1>
+          <form onSubmit={handleFormSubmit} className="col  form">
+            <input
+              className="form-input emailFrom"
+              placeholder="Your full name"
+              name="name"
+              type="text"
+              value={formState.name}
+              onChange={handleChange}
+            />
             <input
               className="form-input emailFrom"
               placeholder="Your email"
               name="email"
               type="email"
               value={formState.email}
-            //onChange={handleChange}
+              onChange={handleChange}
             />
-          </form>
-          <a href='/ChildSignup'>
-
+            <div className="passwordInput">
+              <input
+                className="form-input"
+                placeholder="Password"
+                name="password"
+                type={formState.showPassword ? "text" : "password"}
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                placeholder="Confirm your password"
+                name="confirmPassword"
+                type={formState.showPassword ? "text" : "password"}
+                value={formState.confirmPassword}
+                onChange={handleChange}
+              />
+              <label>
+                <input
+                  name="showPassword"
+                  type="checkbox"
+                  checked={formState.showPassword || false}
+                  onChange={handleChange}
+                />
+                Show Password
+              </label>
+            </div>
+            {errorState && (
+              <div
+                className="my-3 p-3 bg-danger text-white"
+                style={{ color: "red" }}
+              >
+                {errorState}
+              </div>
+            )}
             <button
               className="btn btn-block btn-primary BtnRed"
-              style={{ cursor: 'pointer' }}
-
-
+              style={{ cursor: "pointer" }}
+              type="submit"
             >
               Submit
             </button>
-          </a>
-          <p>Already have an account? <Link to="/login">Login here</Link></p>
+          </form>
+          {/* <a href='/ChildSignup'>
+          </a> */}
 
-          {/* 
-          {error && (
-            <div className="my-3 p-3 bg-danger text-white">
-            {error.message}
-            </div>
-          )} */}
+          <p>
+            Already have an account? <Link to="/login">Login here</Link>
+          </p>
         </div>
       </div>
     </div>
-
   );
 };
 
-
-export default ParentSignup
+export default ParentSignup;

@@ -5,7 +5,6 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     email: String!
-    password: String!
     savedChildren: [Child]
   }
 
@@ -14,17 +13,14 @@ const typeDefs = gql`
     name: String!
     badges: String
     theme:String
-    grownups: [Parent]
+    grownups: [Parent]!
   }
 
   type Entry {
     _id: ID!
-    ChildId: [String]!
+    ChildId: String!
     mood: String
     responseOne: String
-    responseTwo: String
-    responseThree: String
-    images: String
   }
 
   type Auth {
@@ -35,22 +31,17 @@ const typeDefs = gql`
   type Query {
     me: Parent
     parents: [Parent]
+    parent(_id: ID!): Parent
     children: [Child]
+    child(_id: ID!): Child
     entries: [Entry]
   }
 
   type Mutation {
     addUser(name: String!, email: String!, password: String!): Auth
+    addEntry(ChildId: String!, mood: String!, responseOne: String): Entry
     login(email: String!, password: String!): Auth
-    createChild(name: String!, badges: String!, theme: String): Child
-    createEntry(
-      ChildId: [String]!
-      mood: String!
-      responseOne: String!
-      responseTwo: String!
-      responseThree: String
-      images: String
-    ): Entry
+    createChild(name: String!, badges: String, theme: String, grownups: [String]): Child
   }
 `;
 

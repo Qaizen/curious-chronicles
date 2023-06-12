@@ -10,8 +10,6 @@
   --offblack: #61413F;
 }
 
-
-
 .Gochi {
   font-family: 'Gochi Hand',
     cursive;
@@ -83,6 +81,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  max-width: 30rem;
+  margin: 0 auto;
 }
 
 .col {
@@ -103,9 +103,8 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-
   align-items: center;
-
+  min-height: 100vh;
 }
 
 .logoMark {
@@ -120,6 +119,12 @@
   font-family: 'Mali', cursive, italic;
   font-size: 30px;
   padding: 10px;
+}
+
+.frontPageImgBook {
+  max-width: 60%;
+  height: auto;
+  margin: 0.5rem;
 }
 
 .imgBook {
@@ -144,8 +149,30 @@
     parent-signup-page
 */
 
+.parentRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+.grownUpContainer {
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
+  height: auto;
+}
+
+.grownUpImg {
+  max-width: 100%;
+  min-width: 12.5rem;
+  height: auto;
+  object-fit: contain;
+}
+
+
 .Signup-body {
   padding: 85px;
+  display: flex;
 }
 
 .parTitle {
@@ -163,11 +190,18 @@
   padding: 20px;
 }
 
-.passwordInput {}
+.passwordInput {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 2.5rem;
+}
 
 .form {
+  display: flex;
   max-width: 600px;
   margin: 20px;
+  justify-content: flex-start;
 }
 
 .emailFrom {
@@ -457,4 +491,15 @@
 
 .marginSub {
   margin: 100px;
+
+
+@media (max-width: 768px) {
+  .row {
+    width: 35%;
+  }
+
+  .frontPageImgBook {
+    max-width: 100%;
+  }
+
 }
