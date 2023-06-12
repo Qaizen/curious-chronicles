@@ -17,7 +17,9 @@ const childSchema = new Schema({
         type: String,
     },
     // dont know if this is needed
-    grownups: [{ type: Schema.Types.ObjectId, ref: 'Parent' }],
+    grownups: [{
+        type: Schema.Types.ObjectId, ref: 'Parent'
+    }],
 
     entries: [
         {

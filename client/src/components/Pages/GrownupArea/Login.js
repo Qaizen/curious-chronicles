@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations.js';
 
@@ -10,10 +10,16 @@ const Login = (props) => {
     const [login, { error, data }] = useMutation(LOGIN_USER);
 
     const navigate = useNavigate();
-    const location = useLocation();
+
+    useEffect(() => {
+        if (Auth.loggedIn()) {
+            navigate('/ChildSignup');
+        }
+    }, [navigate]);
 
     // update state based on form input changes
     const handleChange = (event) => {
+
         const { name, value, type, checked } = event.target;
 
         if (type === "checkbox") {
@@ -33,24 +39,26 @@ const Login = (props) => {
     // submit form
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+
         try {
             const { data } = await login({ variables: formState });
 
-            Auth.login(data.login.token);
+            console.log(data);
+
+            //Testing to see if this works
+            await new Promise((resolve) => {
+                Auth.login(data.login.token);
+                resolve();
+            })
+
 
             // Redirect to ChildSignup
-            if (location.pathname !== '/ChildSignup') {
-                navigate('/ChildSignup');
-            }
+            navigate(`/ChildSignup/`);
+            //navigate(`/ChildSignup/${data.login.user._id}`);
+
         } catch (e) {
             console.error(e);
         }
-
-        // clear form values
-        // setFormState({
-        //     email: '',
-        //     password: '',
-        // });
     };
 
     return (
@@ -97,18 +105,15 @@ const Login = (props) => {
                         >
                             Submit
                         </button>
-                        {/* </a> */}
+                        <p>
+                            Don't have an account? <Link to="/ParentSignup">Signup here</Link>
+                        </p>
+                        {error && (
+                            <div className="my-3 p-3 bg-danger text-white">
+                                {error.message}
+                            </div>
+                        )}
                     </form>
-
-                    <p>
-                        Don't have an account? <Link to="/ParentSignup">Signup here</Link>
-                    </p>
-                    {error && (
-                        <div className="my-3 p-3 bg-danger text-white">
-                            {error.message}
-                        </div>
-                    )}
-                    {/* </div> */}
                 </div>
             </div>
         </div>

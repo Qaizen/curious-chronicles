@@ -8,8 +8,8 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 //adds CSS
 import './Reset.css';
@@ -61,7 +61,13 @@ const client = new ApolloClient({
 
 
 function App() {
-  // const [page, setPage] = useState("splash");
+
+  // const [current, setCurrent] = useState('/');
+  // const location = useLocation();
+
+  // useEffect(() => {
+  //   setCurrent(location.pathname);
+  // }, [location]);
 
   return (
 
@@ -81,7 +87,7 @@ function App() {
             <Route path="/Sub" element={<Sub />} /> {/*Subscription page*/}
 
             {/* questions links  */}
-            <Route path="/QMood" element={<QMood />} /> 
+            <Route path="/QMood" element={<QMood />} />
             <Route path="/QOne" element={<QOne />} /> {/*Why do you feel that way page*/}
             <Route path="/QTwo" element={<QTwo />} /> {/*Thing the kid is good at page*/}
             <Route path="/QFinished" element={<QFinished />} />

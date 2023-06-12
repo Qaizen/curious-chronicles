@@ -1,41 +1,51 @@
-// import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
-// import { useMutation } from '@apollo/client';
-// // import { ADD_CHILD } from "../../../utils/mutations.js";
-// import Auth from '../../../utils/auth';
+import React, { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { ADD_CHILD } from "../../../utils/mutations.js";
+import Auth from '../../../utils/auth.js';
 
 function ChildSignup() {
-    // const [formState, setFormState] = useState({
-    //     name: '',
-    // });
-    // // const [addChild, { error, data }] = useMutation(ADD_CHILD);
 
-    // const parentId = Auth.getUser().id; // Get the parent ID from the logged-in user
+    console.log("**************Auth**************");
+    console.log(Auth);
+    const [formState, setFormState] = useState({
+        name: '',
+    });
+    const [addChild, { error, data }] = useMutation(ADD_CHILD);
 
-    // const handleChange = (event) => {
-    //     const { name, value } = event.target;
+    //This is where we get the parent id
+    // const params = useParams();
+    // const parentId = params.id; // Get the parent ID from the logged-in user
 
-    //     setFormState({
-    //         ...formState,
-    //         [name]: value,
-    //     });
-    // };
 
-    // const handleFormSubmit = async (event) => {
-    //     event.preventDefault();
+    //*****************This is temporal for testing only *****************
+    const parentId = "648120efe2bd4c85b75a1c93";
+    //*****************This is temporal for testing only *****************
 
-    //     // try {
-    //     //     const { data } = await addChild({
-    //     //         variables: {
-    //     //             parentId: parentId, // Pass the parent ID as a variable
-    //     //             name: formState.name,
-    //     //         },
-    //     //     });
-    //     // } catch (error) {
-    //     //     console.log(error);
-    //     // }
-    // };
 
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+    };
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            const { data } = await addChild({
+                variables: {
+                    //parentId: parentId, // Pass the parent ID as a variable
+                    name: formState.name,
+                },
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
         <div className="Signup-body backgroundY" >
@@ -54,13 +64,13 @@ function ChildSignup() {
                             <input
                                 className="childform-input"
                                 name="name"
-                            // value={formState.name}
-                            // onChange={handleChange}
+                                value={formState.name}
+                                onChange={handleChange}
                             />
 
                         </form>
-                        {/* <button className="BtnRed" onClick={handleFormSubmit}>All Done!</button> */}
-                        <button className="BtnRed" >All Done!</button>
+                        <button className="BtnRed" onClick={handleFormSubmit}>All Done!</button>
+                        {/* <button className="BtnRed" >All Done!</button> */}
                     </div>
                 </div>
 

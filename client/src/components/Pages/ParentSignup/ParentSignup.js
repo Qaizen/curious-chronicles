@@ -52,10 +52,14 @@ const ParentSignup = (props) => {
         ...formState,
       });
 
-      Auth.login(data.addUser.token);
+      console.log("data");
+      console.log(data);
 
-      // Redirect to ChildSignup
-      navigate(`/ChildSignup`);
+      // Auth.login(data.addUser.token, () => {
+      //   // Redirect to ChildSignup
+      //   navigate(`/ChildSignup`);
+      // });
+
     } catch (e) {
       console.error(e);
       setErrorState(e.message); // Set the error message from the mutation
