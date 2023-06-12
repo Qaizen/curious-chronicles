@@ -24,7 +24,7 @@ By empowering parents to register their children, the app provides a seamless pa
 
 ## Credits
 - Gina Davis | [GitHub](https://github.com/ginitadavis) | [Portfolio](https://ginitadavis.github.io/platinum-portfolio/) | [LinkedIn](https://www.linkedin.com/in/gina-davis-b3944525/) 
-- Leah Harden | [GitHub](https://github.com/Leah-Harden) | [Portfolio](https://github.com/Leah-Harden/React-Based-Showcase) | [LinkedIn](https://www.linkedin.com/in/leahxharden/) 
+- Leah Xinli Harden | [GitHub](https://github.com/Leah-Harden) | [Portfolio](https://github.com/Leah-Harden/React-Based-Showcase) | [LinkedIn](https://www.linkedin.com/in/leahxharden/) 
 - Patrick Ameglio | [GitHub](https://github.com/PatAmeglio) | [Portfolio](https://github.com/PatAmeglio/react-portfolio) | [LinkedIn](https://www.linkedin.com/in/patrick-ameglio-8319a6b0/) 
 - John Magnusson | [GitHub](https://github.com/sobewon) | [Portfolio](https://sobewon.github.io/reaction-portfolio/) | [LinkedIn](https://www.linkedin.com/in/john-magnuson-8b0806263/) 
 - Steven Nguyen | [GitHub](https://github.com/Qaizen) | [Portfolio](https://qaizen.github.io/react-portfolio/) | [LinkedIn](https://www.linkedin.com/in/steveqvnguyen/) 

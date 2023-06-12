@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations.js';
 
@@ -82,6 +83,37 @@ const Login = (props) => {
                                     value={formState.password}
                                     onChange={handleChange}
                                 />
+                            </div>
+
+                            <button
+                                className="BtnRed"
+                                style={{ cursor: 'pointer' }}
+                                type="submit"
+                            >
+                                Submit
+                            </button>
+
+                        </form>
+                        <a href='/GrownupArea'>
+
+                            <button
+                                className="BtnRed"
+                                style={{ cursor: 'pointer' }}
+                                type="submit"
+                            >
+                                delete later
+                            </button>
+                        </a>
+                    </div>
+                )}
+
+                {error && (
+                    <div className="Mali">
+                        {error.message}
+                    </div>
+                )}
+            </div>
+
                                 <label>
                                     <input
                                         name="showPassword"

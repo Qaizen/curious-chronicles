@@ -21,6 +21,8 @@
     cursive;
 }
 
+
+
 /*
     Components 
 */
@@ -244,6 +246,13 @@
     Home
 */
 
+.rowFront {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
 
 .brownBox {
   display: flex;
@@ -451,9 +460,37 @@
   align-self: start;
 }
 
+.marginLogin {
+  margin: 200px;
+}
+
 /*
     Sub
 */
+
+.yellowBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #FDD6B2;
+  color: --offblack;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  margin: 30px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 20px;
+}
+
+.titleSub {
+  margin: 20px;
+}
+
+.marginSub {
+  margin: 100px;
 
 
 @media (max-width: 768px) {
@@ -464,4 +501,5 @@
   .frontPageImgBook {
     max-width: 100%;
   }
+
 }
