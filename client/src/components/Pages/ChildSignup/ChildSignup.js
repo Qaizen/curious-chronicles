@@ -1,27 +1,20 @@
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { ADD_CHILD } from "../../../utils/mutations.js";
+import { GET_PARENT } from "../../../utils/queries.js";
 import Auth from '../../../utils/auth.js';
 
-function ChildSignup() {
+function ChildSignup({ user }) {
+
+    // we receive a variable between curly brackets
+    console.log("userMe");
+    console.log(user);
 
     console.log("**************Auth**************");
     console.log(Auth);
-    const [formState, setFormState] = useState({
-        name: '',
-    });
+    const [formState, setFormState] = useState({ name: '' });
     const [addChild, { error, data }] = useMutation(ADD_CHILD);
-
-    //This is where we get the parent id
-    // const params = useParams();
-    // const parentId = params.id; // Get the parent ID from the logged-in user
-
-
-    //*****************This is temporal for testing only *****************
-    const parentId = "648120efe2bd4c85b75a1c93";
-    //*****************This is temporal for testing only *****************
-
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -38,7 +31,6 @@ function ChildSignup() {
         try {
             const { data } = await addChild({
                 variables: {
-                    //parentId: parentId, // Pass the parent ID as a variable
                     name: formState.name,
                 },
             });
@@ -50,16 +42,15 @@ function ChildSignup() {
     return (
         <div className="Signup-body backgroundY" >
 
+            {user?.savedChildren.map(child => (
+                <div style={{ margin: "10px", border: "black 2px solid" }}>{child.name}</div>
+            ))}
             <div className="row">
-
                 <img className="imgBook" src='./Photos/Fox.png' alt="A Fox" />
                 <div >
-
                     <h1 className="parTitle Mali">Now for the fun part!</h1>
                     <div className='col '>
-
                         <form className='col form'>
-
                             <label className="label" >Your Name!</label>
                             <input
                                 className="childform-input"
@@ -67,13 +58,10 @@ function ChildSignup() {
                                 value={formState.name}
                                 onChange={handleChange}
                             />
-
+                            <button className="BtnRed" onClick={handleFormSubmit}>All Done!</button>
                         </form>
-                        <button className="BtnRed" onClick={handleFormSubmit}>All Done!</button>
-                        {/* <button className="BtnRed" >All Done!</button> */}
                     </div>
                 </div>
-
             </div >
         </div >
     );
