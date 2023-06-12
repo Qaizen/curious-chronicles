@@ -13,7 +13,7 @@ const typeDefs = gql`
     name: String!
     badges: String
     theme:String
-    grownups: [Parent]
+    grownups: [Parent]!
   }
 
   type Entry {
@@ -41,7 +41,7 @@ const typeDefs = gql`
     addUser(name: String!, email: String!, password: String!): Auth
     addEntry(ChildId: String!, mood: String!, responseOne: String): Entry
     login(email: String!, password: String!): Auth
-    createChild(name: String!, badges: String!, theme: String): Child
+    createChild(name: String!, badges: String, theme: String, grownups: [String]): Child
   }
 `;
 

@@ -30,15 +30,13 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_CHILD = gql`
-  mutation Mutation($name: String!, $badges: String!, $theme: String) {
+  mutation Mutation($name: String!, $badges: String, $theme: String) {
   createChild(name: $name, badges: $badges, theme: $theme) {
     _id
     name
     badges
     grownups {
       _id
-      email
-      name
     }
     theme
   }

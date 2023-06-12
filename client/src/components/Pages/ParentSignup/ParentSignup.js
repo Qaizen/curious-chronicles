@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../../utils/mutations.js";
@@ -16,7 +16,14 @@ const ParentSignup = (props) => {
   const [errorState, setErrorState] = useState("");
 
   const [addUser, { error, data }] = useMutation(ADD_USER);
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (Auth.loggedIn()) {
+      navigate('/ChildSignup');
+    }
+  }, [navigate]);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -52,10 +59,14 @@ const ParentSignup = (props) => {
         ...formState,
       });
 
-      Auth.login(data.addUser.token);
+      console.log("data");
+      console.log(data);
 
-      // Redirect to ChildSignup
-      navigate(`/ChildSignup`);
+      // Auth.login(data.addUser.token, () => {
+      //   // Redirect to ChildSignup
+      //   navigate(`/ChildSignup`);
+      // });
+
     } catch (e) {
       console.error(e);
       setErrorState(e.message); // Set the error message from the mutation

@@ -154,13 +154,26 @@ const resolvers = {
         // Save the child to the database
         const createdChild = await child.save();
 
+        // await Parent.findByIdAndUpdate(parentId, {
+        //   $addToSet: {
+        //     savedChildren: createdChild._id
+        //   }
+        // })
+
+        // return createdChild;
+
+        // Populate the `grownups` field with the actual `Parent` objects
+        const populatedChild = await Child.findById(createdChild._id)
+          .populate('grownups')
+          .exec();
+
         await Parent.findByIdAndUpdate(parentId, {
           $addToSet: {
             savedChildren: createdChild._id
           }
-        })
+        });
 
-        return createdChild;
+        return populatedChild;
 
       } catch (error) {
         throw Error(error)
