@@ -6,8 +6,9 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
+        console.log(context.user);
         try {
-          const userData = await Parent.findOne({ _id: context.user.id })
+          const userData = await Parent.findOne({ _id: context.user._id }).populate("savedChildren")
           return userData
 
         } catch (error) {

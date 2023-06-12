@@ -11,11 +11,11 @@ const Login = (props) => {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (Auth.loggedIn()) {
-            navigate('/ChildSignup');
-        }
-    }, [navigate]);
+    // useEffect(() => {
+    //     if (Auth.loggedIn()) {
+    //         navigate('/ChildSignup');
+    //     }
+    // }, [navigate]);
 
     // update state based on form input changes
     const handleChange = (event) => {
@@ -46,11 +46,7 @@ const Login = (props) => {
             console.log(data);
 
             //Testing to see if this works
-            await new Promise((resolve) => {
-                Auth.login(data.login.token);
-                resolve();
-            })
-
+            Auth.login(data.login.token);
 
             // Redirect to ChildSignup
             navigate(`/ChildSignup/`);
