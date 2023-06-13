@@ -44,17 +44,20 @@ function ChildSignup({ user }) {
         <div className="Signup-body backgroundY" >
 
             {user?.savedChildren.length > 0 && (
-                <div style={{ margin: "10px", border: "black 2px solid" }}>
+                <h1 className='childName'>
                     {user.savedChildren[0].name}
-                </div>
+                </h1>
             )}
             <div className="row">
-                <img className="imgBook" src='./Photos/Fox.png' alt="A Fox" />
+                <img className="imgBook" src='../Photos/Fox.png' alt="A Fox" />
                 <div >
                     <h1 className="parTitle Mali">Now for the fun part!</h1>
                     <div className='col '>
                         <form className='col form'>
-                            <label className="label" >Your Name!</label>
+                            <label className="label" >Your Name! Please refresh page.
+
+
+                            </label>
                             <input
                                 className="childform-input"
                                 name="name"

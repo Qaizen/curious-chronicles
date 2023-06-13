@@ -221,6 +221,27 @@
 
 
 
+
+
+.childName {
+  background-color: #78bae3;
+  text-align: center;
+  color: --offblack;
+  border: none;
+  border-radius: 15px;
+  padding: 70px;
+  max-height: 50px;
+  margin: 30px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 30px;
+}
+
+
+
+
+
+
 .childform-input {
   background-color: #9F9D64;
   border: none;
@@ -271,6 +292,14 @@
 
 
 }
+
+.moodIcon {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 50px;
+}
+
 
 .Badges {
   display: grid;
