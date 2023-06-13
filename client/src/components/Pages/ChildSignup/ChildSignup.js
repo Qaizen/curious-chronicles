@@ -49,7 +49,7 @@ function ChildSignup({ user }) {
                 </div>
             )}
             <div className="row">
-                <img className="imgBook" src='./Photos/Fox.png' alt="A Fox" />
+                <img className="imgBook" src='../Photos/Fox.png' alt="A Fox" />
                 <div >
                     <h1 className="parTitle Mali">Now for the fun part!</h1>
                     <div className='col '>

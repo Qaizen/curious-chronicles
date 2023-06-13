@@ -181,6 +181,43 @@ const resolvers = {
       }
     },
 
+    deleteEntry: async (parent, { _id }) => {
+      try {
+        // Find the entry by its ID
+        const deletedEntry = await Entry.findByIdAndDelete(_id);
+  
+        // If the entry doesn't exist, throw an error
+        if (!deletedEntry) {
+          throw new Error('Entry not found');
+        }
+  
+        // Return the deleted entry
+        return deletedEntry;
+      } catch (error) {
+        throw new Error('Failed to delete entry');
+      }
+    },
+
+    updateEntry: async (parent, { _id, mood, responseOne }) => {
+      try {
+        // Find the entry by its ID and update its properties
+        const updatedEntry = await Entry.findByIdAndUpdate(
+          _id,
+          { mood, responseOne },
+          { new: true }
+        );
+  
+        // If the entry doesn't exist, throw an error
+        if (!updatedEntry) {
+          throw new Error('Entry not found');
+        }
+  
+        // Return the updated entry
+        return updatedEntry;
+      } catch (error) {
+        throw new Error('Failed to update entry');
+      }
+    },
   },
 };
 

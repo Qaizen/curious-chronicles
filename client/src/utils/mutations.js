@@ -42,3 +42,21 @@ export const ADD_CHILD = gql`
   }
 }
 `;
+
+export const DELETE_ENTRY = gql`
+mutation Mutation($id: ID!) {
+  deleteEntry(_id: $id) {
+    _id
+    ChildId
+  }
+}
+`
+
+export const UPDATE_ENTRY = gql`
+updateEntry(_id: $id, mood: $mood, responseOne: $responseOne) {
+    mood
+    responseOne
+    _id
+    ChildId
+  }
+`
