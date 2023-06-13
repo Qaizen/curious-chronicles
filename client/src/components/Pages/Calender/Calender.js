@@ -16,19 +16,19 @@ function Calender() {
                     <div className='col padCal'>
                         <h6>Sun</h6>
                         <div className="circle moodIcon">
-                            <img src={wink} alt=":-)" className='moodIcon' />
+                            <img src={wink} alt="wink" className='moodIcon' />
                         </div>
                     </div>
                     <div className='col padCal'>
                         <h6>Mon</h6>
                         <div className="circle moodIcon">
-                            <img src={neutral} alt=":-)" className='moodIcon' />
+                            <img src={neutral} alt="neutral look" className='moodIcon' />
                         </div>
                     </div>
                     <div className='col padCal'>
                         <h6>Tue</h6>
                         <div className="circle moodIcon">
-                            <img src={sad} alt=":-)" className='moodIcon' />
+                            <img src={sad} alt="sad look" className='moodIcon' />
                         </div>
                     </div>
                     <div className='col padCal'>
