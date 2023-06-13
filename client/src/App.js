@@ -31,13 +31,13 @@ import { loadStripe } from '@stripe/stripe-js';
 import CheckoutForm from './components/Pages/NewStripe/CheckoutForm';
 
 function App() {
-    const { data } = useQuery(GET_ME);
+  const { data } = useQuery(GET_ME);
   const userMe = data?.me;
 
-//stripe
-// Make sure to call `loadStripe` outside of a component’s render to avoid
-// recreating the `Stripe` object on every render.
-const stripePromise = loadStripe('pk_test_51NGW5hGa0dfhEuOuwIeTm5qdHGSsUA2bk6fgFyDixDKGA8GnqaQYAtJcmbQkwfsRbwAaZjbhP61IXtwkhKiHksbP00i5Iugqla');
+  //stripe
+  // Make sure to call `loadStripe` outside of a component’s render to avoid
+  // recreating the `Stripe` object on every render.
+  const stripePromise = loadStripe('pk_test_51NGW5hGa0dfhEuOuwIeTm5qdHGSsUA2bk6fgFyDixDKGA8GnqaQYAtJcmbQkwfsRbwAaZjbhP61IXtwkhKiHksbP00i5Iugqla');
 
   // const [current, setCurrent] = useState('/');
   // const location = useLocation();
@@ -45,12 +45,12 @@ const stripePromise = loadStripe('pk_test_51NGW5hGa0dfhEuOuwIeTm5qdHGSsUA2bk6fgF
   // useEffect(() => {
   //   setCurrent(location.pathname);
   // }, [location]);
-//stripe
+  //stripe
   const options = {
     clientSecret: '{{ CLIENT_SECRET }}',
-
+  }
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={client} >
       <Router>
         <div className="App">
           <Routes>
@@ -76,7 +76,7 @@ const stripePromise = loadStripe('pk_test_51NGW5hGa0dfhEuOuwIeTm5qdHGSsUA2bk6fgF
           </Routes>
         </div>
       </Router>
-    </ApolloProvider>
+    </ApolloProvider >
   );
 }
 

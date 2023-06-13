@@ -42,23 +42,20 @@ function ChildSignup({ user }) {
     return (
         <div className="Signup-body backgroundY" >
 
-            {user?.savedChildren.map(child => (
-                <div style={{ margin: "10px", border: "black 2px solid" }}>{child.name}</div>
-            ))}
             <div className="row">
                 <img className="imgBook" src='./Photos/Fox.png' alt="A Fox" />
                 <div >
-                    <h1 className="parTitle Mali">Now for the fun part!</h1>
+                    <h1 className="parTitle Mali">Choose your name!</h1>
                     <div className='col '>
                         <form className='col form'>
-                            <label className="label" >Your Name!</label>
-                            <input
-                                className="childform-input"
-                                name="name"
-                                value={formState.name}
-                                onChange={handleChange}
-                            />
-                            <button className="BtnRed" onClick={handleFormSubmit}>All Done!</button>
+                            <label className="ChildName" >
+                                {user?.savedChildren.map(child => (
+                                    <div style={{ margin: "10px", border: "black 2px solid" }}>{child.name}</div>
+                                ))}
+
+                            </label>
+
+                            <button className="BtnRed" onClick={handleFormSubmit}>Ready!</button>
                         </form>
                     </div>
                 </div>
