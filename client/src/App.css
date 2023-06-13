@@ -494,6 +494,45 @@
   margin: 100px;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-link {
+  margin-right: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.header-greeting {
+  margin-right: 15px;
+  font-family: 'Mali', cursive;
+}
+
+.header-logout {
+  background-color: var(--colorone);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-family: 'Mali', cursive;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .row {
     width: 35%;
