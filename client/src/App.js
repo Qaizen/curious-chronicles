@@ -28,7 +28,7 @@ import Login from './components/Pages/GrownupArea/Login.js'
 import GrownupArea from './components/Pages/GrownupArea/GrownupArea.js'
 //this is a comment
 //question imports
-import QMood from './components/Pages/Questions/QMood.js'
+import QCombined from './components/Pages/Questions/QMood.js'
 import QOne from './components/Pages/Questions/QOne.js'
 import QTwo from './components/Pages/Questions/QTwo.js'
 import QFinished from './components/Pages/Questions/QFinished.js'
@@ -75,7 +75,7 @@ function App() {
           <Route path="/Sub" element={<Sub />} /> {/*Subscription page*/}
 
           {/* questions links  */}
-          <Route path="/QMood" element={<QMood />} />
+          <Route path="/QMood" element={<QCombined />} />
           <Route path="/QOne" element={<QOne />} /> {/*Why do you feel that way page*/}
           <Route path="/QTwo" element={<QTwo />} /> {/*Thing the kid is good at page*/}
           <Route path="/QFinished" element={<QFinished />} />

@@ -2,6 +2,8 @@ import BrownBox from "./BrownBox/BrownBox.js";
 import Circle from "./BrownBox/circlePlaceholder";
 import MoodLine from "./MoodLine.js";
 
+import business from '../../../assets/icons/business.png'
+import calendar from '../../../assets/icons/calendar.png'
 
 function Home() {
     return (
@@ -18,7 +20,9 @@ function Home() {
             </div>
             <div>
                 <div className="brownBox">
-                    <Circle />
+                    <div className="circle moodIcon">
+                        <img src={business} alt=":-)" className='moodIcon' />
+                    </div>
                     <h3 className='fontsizeHome'>Store</h3>
 
                 </div>
@@ -28,11 +32,15 @@ function Home() {
                         <h3>Streak!</h3>
                         <h3>Great Job!</h3>
                     </div>
-                    <Circle />
+                    <div className="circle moodIcon">
+                        <h2 className='moodIcon StreakNum'>12</h2>
+                    </div>
                 </div>
 
                 <div className="brownBox">
-                    <Circle />
+                    <div className="circle moodIcon">
+                        <img src={calendar} alt=":-)" className='moodIcon' />
+                    </div>
                     <h3 className='fontsizeHome'>Calendar</h3>
 
                 </div>

@@ -298,8 +298,16 @@
   justify-content: center;
   align-self: center;
   height: 50px;
+  font-family: 'Mali',
+    cursive;
 }
 
+.StreakNum {
+  font-size: 40px;
+  color: #61413F;
+  font-family: 'Mali',
+    cursive;
+}
 
 .Badges {
   display: grid;
@@ -361,6 +369,20 @@
   margin: 20px;
 
 }
+
+.moodBigIcon {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 170px;
+  width: 170px;
+  font-family: 'Mali',
+    cursive;
+  background-color: aliceblue;
+  border-radius: 50%;
+  padding: 20px;
+}
+
 
 .QOne {
   display: grid;
