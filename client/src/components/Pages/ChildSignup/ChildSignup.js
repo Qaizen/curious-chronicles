@@ -43,9 +43,11 @@ function ChildSignup({ user }) {
     return (
         <div className="Signup-body backgroundY" >
 
-            {user?.savedChildren.map(child => (
-                <div style={{ margin: "10px", border: "black 2px solid" }}>{child.name}</div>
-            ))}
+            {user?.savedChildren.length > 0 && (
+                <div style={{ margin: "10px", border: "black 2px solid" }}>
+                    {user.savedChildren[0].name}
+                </div>
+            )}
             <div className="row">
                 <img className="imgBook" src='./Photos/Fox.png' alt="A Fox" />
                 <div >
