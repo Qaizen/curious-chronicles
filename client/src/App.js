@@ -33,7 +33,7 @@ import QOne from './components/Pages/Questions/QOne.js'
 import QTwo from './components/Pages/Questions/QTwo.js'
 import QFinished from './components/Pages/Questions/QFinished.js'
 
-import Sub from './components/Pages/old/Sub';
+import Sub from './components/Pages/Stripe/Sub.js';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import CheckoutForm from './components/Pages/NewStripe/CheckoutForm';

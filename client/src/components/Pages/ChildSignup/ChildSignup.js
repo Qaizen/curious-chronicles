@@ -6,6 +6,7 @@ import { GET_PARENT } from "../../../utils/queries.js";
 import Auth from '../../../utils/auth.js';
 
 function ChildSignup({ user }) {
+    //create new comment
 
     // we receive a variable between curly brackets
     console.log("userMe");
