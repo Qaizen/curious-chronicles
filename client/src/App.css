@@ -92,9 +92,13 @@
   align-items: center;
 }
 
+
+
 /*
     about-page
 */
+
+
 
 .about-page {
   background-color: var(--colorthr);
@@ -145,9 +149,12 @@
 }
 
 
+
 /*
     parent-signup-page
 */
+
+
 
 .parentRow {
   display: flex;
@@ -210,9 +217,13 @@
 }
 
 
+
 /*
     Chat-signup-page
 */
+
+
+
 .backgroundY {
 
   background-color: var(--colorfou);
@@ -267,6 +278,8 @@
 /*
     Home
 */
+
+
 
 .rowFront {
   display: flex;
@@ -346,6 +359,8 @@
     Q
 */
 
+
+
 .BackgroundQ {
   padding: 200px;
   height: 60dvh;
@@ -411,9 +426,13 @@
   grid-column: 4 / 5
 }
 
+
+
 /*
     Grownup
 */
+
+
 
 .kidcenter {
   display: flex;
@@ -516,9 +535,13 @@
   margin: 200px;
 }
 
+
+
 /*
     Sub
 */
+
+
 
 .yellowBox {
   display: flex;
@@ -554,4 +577,31 @@
     max-width: 100%;
   }
 
+}
+
+
+/*
+        Calender
+*/
+
+
+.yellowBoxCal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #FDD6B2;
+  color: --offblack;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  width: 650px;
+  margin: 30px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 20px;
+}
+
+.padCal {
+  margin: 6px;
 }

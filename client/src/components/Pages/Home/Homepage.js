@@ -37,13 +37,13 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="brownBox">
+                <a className="brownBox" href="/Calender">
                     <div className="circle moodIcon">
                         <img src={calendar} alt=":-)" className='moodIcon' />
                     </div>
                     <h3 className='fontsizeHome'>Calendar</h3>
 
-                </div>
+                </a>
                 <a href='/Login'>
 
                     <div className="greyBox">
