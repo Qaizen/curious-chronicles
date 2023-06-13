@@ -3,10 +3,13 @@ import { Link, useParams } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_CHILD } from "../../../utils/mutations.js";
 import { GET_PARENT } from "../../../utils/queries.js";
+import { GET_ME } from "../../../utils/queries.js"
 import Auth from '../../../utils/auth.js';
 
-function ChildSignup({ user }) {
-    //create new comment
+function ChildSignup() {
+
+    const { data: meData } = useQuery(GET_ME);
+    const user = meData?.me;
 
     // we receive a variable between curly brackets
     console.log("userMe");
@@ -43,11 +46,13 @@ function ChildSignup({ user }) {
     return (
         <div className="Signup-body backgroundY" >
 
-            {user?.savedChildren.length > 0 && (
-                <div style={{ margin: "10px", border: "black 2px solid" }}>
-                    {user.savedChildren[0].name}
-                </div>
-            )}
+            <a href='/Home'>
+                {user?.savedChildren.length > 0 && (
+                    <div style={{ margin: "10px", border: "black 2px solid" }}>
+                        {user.savedChildren[0].name}
+                    </div>
+                )}
+            </a>
             <div className="row">
                 <img className="imgBook" src='../Photos/Fox.png' alt="A Fox" />
                 <div >

@@ -53,10 +53,12 @@ mutation Mutation($id: ID!) {
 `
 
 export const UPDATE_ENTRY = gql`
+mutation Mutation($id: ID!, $mood: String, $responseOne: String) {
 updateEntry(_id: $id, mood: $mood, responseOne: $responseOne) {
     mood
     responseOne
     _id
     ChildId
   }
+}
 `

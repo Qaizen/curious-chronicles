@@ -8,8 +8,9 @@ const resolvers = {
       if (context.user) {
         console.log(context.user);
         try {
-          const userData = await Parent.findOne({ _id: context.user._id }).populate("savedChildren")
-          return userData
+          const userData = await Parent.findOne({ _id: context.user._id }).populate({path:"savedChildren", populate:{path:"entries"}});
+          console.log(userData);
+          return userData;
 
         } catch (error) {
           throw error

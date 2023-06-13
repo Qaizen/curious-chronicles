@@ -14,6 +14,7 @@ const typeDefs = gql`
     badges: String
     theme:String
     grownups: [Parent]!
+    entries: [Entry]
   }
 
   type Entry {
