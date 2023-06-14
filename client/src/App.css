@@ -41,6 +41,25 @@
   font-size: 18px;
 }
 
+.entryLine {
+  font-family: 'Mali',
+    cursive;
+  display: flex;
+  margin: 35px;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.iconButton {
+  margin: 15px;
+  margin-left: auto;
+}
+
+.iconButton {
+  margin-left: auto;
+}
+
 .circle {
   min-width: 60px;
   min-height: 60px;
