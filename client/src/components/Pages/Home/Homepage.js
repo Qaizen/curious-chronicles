@@ -19,7 +19,7 @@ function Home() {
 
 
     return (
-        <>
+        <div>
             <Header />
             <div className='backgroundHome rowFront'>
                 <BrownBox />
@@ -29,7 +29,7 @@ function Home() {
 
                     <img className="imgBook" src='./Photos/Elephant.png' alt="A Elephant" />
                     <a href="/QMood">
-                        <button className="BtnRed">All Done!</button>
+                        <button className="BtnRed">Write a Story!</button>
                     </a>
                 </div>
                 <div>
@@ -57,39 +57,38 @@ function Home() {
                         </div>
                         <h3 className='fontsizeHome'>Calendar</h3>
                     </a>
+                    <a href='/Login'>
+
+                        <div className="greyBox">
+
+                            <h3>Grownup</h3>
+                            <h3>Area</h3>
+
+                        </div>
+                    </a>
                 </div>
 
-                {user?.savedChildren.length > 0 && (
-                    <div style={{ margin: "10px", border: "black 2px solid" }}>
-                        {user.savedChildren.map(child => {
-                            return (
-                                <div key={child._id}>
-                                    <h4>{child.name}</h4>
-                                    {child.entries.map(entry => {
-                                        return (
-                                            <SingleEntry key={entry._id} entry={entry} />
-                                        )
-                                    })}
-                                </div>
-                            )
-                        })}
-                    </div>
-                )}
-
-                <a href='/Login'>
-
-                    <div className="greyBox">
-
-                        <h3>Grownup</h3>
-                        <h3>Area</h3>
-
-                    </div>
-                </a>
 
             </div>
+
+            {user?.savedChildren.length > 0 && (
+                <div style={{ margin: "10px", border: "black 2px solid" }}>
+                    {user.savedChildren.map(child => {
+                        return (
+                            <div key={child._id}>
+                                <h4>{child.name}</h4>
+                                {child.entries.map(entry => {
+                                    return (
+                                        <SingleEntry key={entry._id} entry={entry} />
+                                    )
+                                })}
+                            </div>
+                        )
+                    })}
+                </div>
+            )}
         </div >
 
-        </>
 
     )
 }
