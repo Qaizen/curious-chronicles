@@ -588,3 +588,17 @@ header {
   font-family: 'Mali',
     cursive;
 }
+
+.childName {
+  background-color: #78bae3;
+  text-align: center;
+  color: --offblack;
+  border: none;
+  border-radius: 15px;
+  padding: 70px;
+  max-height: 50px;
+  margin: 30px;
+  font-family: 'Mali',
+    cursive;
+  font-size: 30px;
+}
