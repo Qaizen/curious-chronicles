@@ -47,9 +47,9 @@ function Home() {
                 <div className="col">
                     <MoodLine />
                     <img className="imgBook" src="./Photos/Elephant.png" alt="An Elephant" />
-                    <a href="/QMood">
-                        <button className="BtnRed">Write a Story!</button>
-                    </a>
+                    <Link to="/QMood">
+                        <button className="BtnRed" style={{ cursor: "pointer" }}>Write a Story!</button>
+                    </Link>
                 </div>
                 <div>
                     <div className="brownBox">
@@ -67,27 +67,27 @@ function Home() {
                             <h2 className="moodIcon StreakNum">12</h2>
                         </div>
                     </div>
-                    <a className="brownBox" href="/Calender">
+                    <Link to="/Calender" className="brownBox">
                         <div className="circle moodIcon">
                             <img src={calendar} alt=":-)" className="moodIcon" />
                         </div>
                         <h3 className="fontsizeHome">Calendar</h3>
-                    </a>
-                    <a href="/Login">
+                    </Link>
+                    <Link to="/Login">
                         <div className="greyBox">
                             <h3>Grownup</h3>
                             <h3>Area</h3>
                         </div>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
             {user?.savedChildren.length > 0 && (
-                <div style={{ margin: '10px', border: 'black 2px solid' }}>
+                <div style={{ margin: '10px' }}>
                     {user.savedChildren.map((child) => {
                         return (
                             <div key={child._id}>
-                                <h4>{child.name}</h4>
+                                <div style={{ textDecoration: "underline" }} className="entryLine">{child.name}</div>
                                 {child.entries.map((entry) => {
                                     return <SingleEntry key={entry._id} entry={entry} />;
                                 })}

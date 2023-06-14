@@ -14,6 +14,7 @@ const ParentSignup = (props) => {
     showPassword: false,
   });
   const [errorState, setErrorState] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -35,6 +36,8 @@ const ParentSignup = (props) => {
         [name]: checked,
       });
     } else {
+      setErrorState(" ");
+      setSuccessMessage(" ");
       setFormState({
         ...formState,
         [name]: value,
@@ -59,27 +62,16 @@ const ParentSignup = (props) => {
         ...formState,
       });
 
+      setSuccessMessage("Registration successful!");
+      navigate('/login');
+
       console.log("data");
       console.log(data);
-
-      // Auth.login(data.addUser.token, () => {
-      //   // Redirect to ChildSignup
-      //   navigate(`/ChildSignup`);
-      // });
 
     } catch (e) {
       console.error(e);
       setErrorState(e.message); // Set the error message from the mutation
     }
-
-    // // clear form values
-    // setFormState({
-    //   name: "",
-    //   email: "",
-    //   password: "",
-    //   confirmPassword: "",
-    //   parentId: "",
-    // });
   };
 
   return (
@@ -146,6 +138,11 @@ const ParentSignup = (props) => {
                 {errorState}
               </div>
             )}
+            {successMessage && (
+              <div className="my-3 p-3 bg-success text-white">
+                {successMessage}
+              </div>
+            )}
             <button
               className="btn btn-block btn-primary BtnRed"
               style={{ cursor: "pointer" }}
@@ -154,8 +151,6 @@ const ParentSignup = (props) => {
               Submit
             </button>
           </form>
-          {/* <a href='/ChildSignup'>
-          </a> */}
 
           <p>
             Already have an account? <Link to="/login">Login here</Link>

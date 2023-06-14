@@ -42,21 +42,25 @@ function SingleEntry({ entry }) {
 
 
     return (
-        <div>
+        <div className="entryLine">
             {!editable ? (
-                <p>Mood: {entry.mood === "happy" ? "😊" : entry.mood === "sad" ? "🥺" : "😒"}  Your Story: {entry.responseOne}</p>
+                <h1>Mood: {entry.mood === "happy" ? "😊"
+                    : entry.mood === "sad" ? "🥺"
+                        : entry.mood === "neutral" ? "😐"
+                            : entry.mood === "hopeful" ? "😉"
+                                : "😒"}  Your Story: {entry.responseOne}</h1>
             ) :
                 (
-                    <>
-                        <input onChange={handleChange} name="mood" value={formState.mood} />
-                        <input onChange={handleChange} name="responseOne" value={formState.responseOne} />
-                        <button onClick={() => handleUpdateEntry(entry._id)}>💾</button>
-                    </>
+                    <div>
+                        <input style={{ cursor: "pointer" }} onChange={handleChange} name="mood" value={formState.mood} />
+                        <input style={{ cursor: "pointer" }} onChange={handleChange} name="responseOne" value={formState.responseOne} />
+                        <button style={{ cursor: "pointer" }} onClick={() => handleUpdateEntry(entry._id)}>💾</button>
+                    </div>
                 )
             }
 
-            <p className="pUpdate" onClick={() => setEditable(!editable)}>✏️</p>
-            <p className="pDelete" onClick={() => handleDeleteEntry(entry._id)}>❌</p>
+            <h1 style={{ cursor: "pointer" }} className="iconButton" onClick={() => setEditable(!editable)}>✏️</h1>
+            <h1 style={{ cursor: "pointer" }} className="iconButton1" onClick={() => handleDeleteEntry(entry._id)}>❌</h1>
         </div>
     )
 }
