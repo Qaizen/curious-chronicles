@@ -22,6 +22,7 @@ import ParentSignup from './components/Pages/ParentSignup/ParentSignup.js';
 import ChildSignup from './components/Pages/ChildSignup/ChildSignup.js';
 
 import Home from './components/Pages/Home/Homepage.js';
+import Calender from './components/Pages/Calender/Calender.js'
 
 //Grown up imports
 import Login from './components/Pages/GrownupArea/Login.js'
@@ -67,6 +68,7 @@ function App() {
           <Route path="/ChildSignup" element={<ChildSignup user={userMe} />} />
           <Route path="/ParentSignup" element={<ParentSignup />} />
           <Route path="/Home" element={<Home />} />
+          <Route path="/Calender" element={<Calender />} />
 
 
           {/* grown up links  */}

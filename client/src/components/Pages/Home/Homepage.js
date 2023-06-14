@@ -8,6 +8,10 @@ import SingleEntry from "../../SingleEntry/SingleEntry.js";
 
 //import Child from "../../../../../server/models/Child.js";
 
+import business from '../../../assets/icons/business.png'
+import calendar from '../../../assets/icons/calendar.png'
+
+
 function Home() {
 
     const { data: meData } = useQuery(GET_ME);
@@ -15,7 +19,7 @@ function Home() {
 
 
     return (
-        <>
+        <div>
             <Header />
             <div className='backgroundHome rowFront'>
                 <BrownBox />
@@ -25,12 +29,14 @@ function Home() {
 
                     <img className="imgBook" src='./Photos/Elephant.png' alt="A Elephant" />
                     <a href="/QMood">
-                        <button className="BtnRed">All Done!</button>
+                        <button className="BtnRed">Write a Story!</button>
                     </a>
                 </div>
                 <div>
                     <div className="brownBox">
-                        <Circle />
+                        <div className="circle moodIcon">
+                            <img src={business} alt=":-)" className='moodIcon' />
+                        </div>
                         <h3 className='fontsizeHome'>Store</h3>
 
                     </div>
@@ -40,32 +46,17 @@ function Home() {
                             <h3>Streak!</h3>
                             <h3>Great Job!</h3>
                         </div>
-                        <Circle />
-                    </div>
-
-                    <div className="brownBox">
-                        <Circle />
-                        <h3 className='fontsizeHome'>Calendar</h3>
-
-                    </div>
-
-                    {user?.savedChildren.length > 0 && (
-                        <div style={{ margin: "10px", border: "black 2px solid" }}>
-                            {user.savedChildren.map(child => {
-                                return (
-                                    <div key={child._id}>
-                                        <h4>{child.name}</h4>
-                                        {child.entries.map(entry => {
-                                            return (
-                                                <SingleEntry key={entry._id} entry={entry} />
-                                            )
-                                        })}
-                                    </div>
-                                )
-                            })}
+                        <div className="circle moodIcon">
+                            <h2 className='moodIcon StreakNum'>12</h2>
                         </div>
-                    )}
+                    </div>
 
+                    <a className="brownBox" href="/Calender">
+                        <div className="circle moodIcon">
+                            <img src={calendar} alt=":-)" className='moodIcon' />
+                        </div>
+                        <h3 className='fontsizeHome'>Calendar</h3>
+                    </a>
                     <a href='/Login'>
 
                         <div className="greyBox">
@@ -75,11 +66,29 @@ function Home() {
 
                         </div>
                     </a>
-
                 </div>
+
+
             </div>
 
-        </>
+            {user?.savedChildren.length > 0 && (
+                <div style={{ margin: "10px", border: "black 2px solid" }}>
+                    {user.savedChildren.map(child => {
+                        return (
+                            <div key={child._id}>
+                                <h4>{child.name}</h4>
+                                {child.entries.map(entry => {
+                                    return (
+                                        <SingleEntry key={entry._id} entry={entry} />
+                                    )
+                                })}
+                            </div>
+                        )
+                    })}
+                </div>
+            )}
+        </div >
+
 
     )
 }
