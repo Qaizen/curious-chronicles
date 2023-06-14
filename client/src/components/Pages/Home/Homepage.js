@@ -8,6 +8,10 @@ import SingleEntry from "../../SingleEntry/SingleEntry.js";
 
 //import Child from "../../../../../server/models/Child.js";
 
+import business from '../../../assets/icons/business.png'
+import calendar from '../../../assets/icons/calendar.png'
+
+
 function Home() {
 
     const { data: meData } = useQuery(GET_ME);
@@ -30,7 +34,9 @@ function Home() {
                 </div>
                 <div>
                     <div className="brownBox">
-                        <Circle />
+                        <div className="circle moodIcon">
+                            <img src={business} alt=":-)" className='moodIcon' />
+                        </div>
                         <h3 className='fontsizeHome'>Store</h3>
 
                     </div>
@@ -40,44 +46,48 @@ function Home() {
                             <h3>Streak!</h3>
                             <h3>Great Job!</h3>
                         </div>
-                        <Circle />
+                        <div className="circle moodIcon">
+                            <h2 className='moodIcon StreakNum'>12</h2>
+                        </div>
                     </div>
 
-                    <div className="brownBox">
-                        <Circle />
+                    <a className="brownBox" href="/Calender">
+                        <div className="circle moodIcon">
+                            <img src={calendar} alt=":-)" className='moodIcon' />
+                        </div>
                         <h3 className='fontsizeHome'>Calendar</h3>
+                    </a>
+                </div>
+
+                {user?.savedChildren.length > 0 && (
+                    <div style={{ margin: "10px", border: "black 2px solid" }}>
+                        {user.savedChildren.map(child => {
+                            return (
+                                <div key={child._id}>
+                                    <h4>{child.name}</h4>
+                                    {child.entries.map(entry => {
+                                        return (
+                                            <SingleEntry key={entry._id} entry={entry} />
+                                        )
+                                    })}
+                                </div>
+                            )
+                        })}
+                    </div>
+                )}
+
+                <a href='/Login'>
+
+                    <div className="greyBox">
+
+                        <h3>Grownup</h3>
+                        <h3>Area</h3>
 
                     </div>
+                </a>
 
-                    {user?.savedChildren.length > 0 && (
-                        <div style={{ margin: "10px", border: "black 2px solid" }}>
-                            {user.savedChildren.map(child => {
-                                return (
-                                    <div key={child._id}>
-                                        <h4>{child.name}</h4>
-                                        {child.entries.map(entry => {
-                                            return (
-                                                <SingleEntry key={entry._id} entry={entry} />
-                                            )
-                                        })}
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    )}
-
-                    <a href='/Login'>
-
-                        <div className="greyBox">
-
-                            <h3>Grownup</h3>
-                            <h3>Area</h3>
-
-                        </div>
-                    </a>
-
-                </div>
             </div>
+        </div >
 
         </>
 
