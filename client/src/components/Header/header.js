@@ -17,15 +17,10 @@ function Header() {
     return (
         <header>
             <div className="header-left">
-                <Link to="/Home" className="header-link">Home</Link>
             </div>
             <div className="header-right">
-                {/* {Auth.loggedIn() && ( */}
-                <>
-                    <span className="header-greeting">{username ? `Welcome,${username}` : "no user"}</span>
-                    <button className="header-logout" onClick={handleSignOut}>Sign Out</button>
-                </>
-                {/* )} */}
+                <span className="header-greeting">{username ? `Welcome,${username}` : "no user"}</span>
+                <button className="header-logout" onClick={handleSignOut}>Sign Out</button>
             </div>
         </header>
     );
