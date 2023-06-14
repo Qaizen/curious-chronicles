@@ -48,9 +48,9 @@ function ChildSignup() {
 
             <a href='/Home'>
                 {user?.savedChildren.length > 0 && (
-                    <div style={{ margin: "10px", border: "black 2px solid" }}>
+                    <h1 className='childName'>
                         {user.savedChildren[0].name}
-                    </div>
+                    </h1>
                 )}
             </a>
             <div className="row">
