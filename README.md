@@ -12,10 +12,10 @@ By empowering parents to register their children, the app provides a seamless pa
 - [Github](https://github.com/Qaizen/curious-chronicles)
 
 ## Link to Live Site
-- [Add Link](https://github.com/Qaizen/curious-chronicles)
+- [Heroku](https://https://curious-chronicles.herokuapp.com/)
     
 ## Preview
-![Screenshot](pic here)
+![Screenshot](../CuriousChronicles/client/public/Photos/screenshot1.jpeg)
 
 ## Future Updates
 - Internal Family Area for submission and upvotes.
@@ -25,7 +25,7 @@ By empowering parents to register their children, the app provides a seamless pa
 ## Credits
 - Gina Davis | [GitHub](https://github.com/ginitadavis) | [Portfolio](https://ginitadavis.github.io/platinum-portfolio/) | [LinkedIn](https://www.linkedin.com/in/gina-davis-b3944525/) 
 - Leah Xinli Harden | [GitHub](https://github.com/Leah-Harden) | [Portfolio](https://github.com/Leah-Harden/React-Based-Showcase) | [LinkedIn](https://www.linkedin.com/in/leahxharden/) 
-- Patrick Ameglio | [GitHub](https://github.com/PatAmeglio) | [Portfolio](https://github.com/PatAmeglio/react-portfolio) | [LinkedIn](https://www.linkedin.com/in/patrick-ameglio-8319a6b0/) 
+- Patrick Ameglio | [GitHub](https://github.com/PatAmeglio) | [Portfolio](https://patameglio.github.io/react-portfolio/) | [LinkedIn](https://www.linkedin.com/in/patrick-ameglio-8319a6b0/) 
 - John Magnusson | [GitHub](https://github.com/sobewon) | [Portfolio](https://sobewon.github.io/reaction-portfolio/) | [LinkedIn](https://www.linkedin.com/in/john-magnuson-8b0806263/) 
 - Steven Nguyen | [GitHub](https://github.com/Qaizen) | [Portfolio](https://qaizen.github.io/react-portfolio/) | [LinkedIn](https://www.linkedin.com/in/steveqvnguyen/) 
 
