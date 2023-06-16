@@ -9,10 +9,10 @@ import worried from '../../../assets/moods/worried.png'
 
 function Calender() {
     return (
-        <div>
+        <div className='backgroundCal'>
             <h1 className="parTitle Mali">January</h1>
             <div className='rowCal'>
-                <div className='col'>
+                <div className='colCal'>
 
                     <div className='weekDayTop'>
                         <h6>Sun</h6>
@@ -26,7 +26,74 @@ function Calender() {
                     </div>
                     <div className="calender">
 
-                        <div className="Mali MoodLineCal">
+                        <div className=" MoodLineCal">
+
+                            <div className="moodIconCalGrey">
+                                <img src={wink} alt="wink" className='moodIcon' />
+                            </div>
+
+                            <div className="moodIconCalGrey">
+                                <img src={neutral} alt="neutral look" className='moodIcon' />
+
+                            </div>
+
+                            <div className="moodIconCalGrey">
+                                <img src={sad} alt="sad look" className='moodIcon' />
+
+                            </div>
+
+                            <div className="moodIconCal">
+                                <img src={wink} alt="wink" className='moodIcon' />
+                            </div>
+
+
+                            <div className="moodIconCal">
+                                <img src={wink} alt="wink" className='moodIcon' />
+                            </div>
+
+                            <div className="moodIconCal">
+                                <img src={worried} alt=":-)" className='moodIcon' />
+                            </div>
+
+
+                            <div className="moodIconCal">
+                                <img src={excited} alt=":-)" className='moodIcon' />
+                            </div>
+                        </div>
+                        <div className=" MoodLineCal">
+
+                            <div className="moodIconCal">
+                                <img src={wink} alt="wink" className='moodIcon' />
+                            </div>
+
+
+                            <div className="moodIconCal">
+                                <img src={wink} alt="wink" className='moodIcon' />
+                            </div>
+
+                            <div className="moodIconCal">
+                                <img src={wink} alt="wink" className='moodIcon' />
+                            </div>
+
+                            <div className="moodIconCal">
+                                <img src={wink} alt="wink" className='moodIcon' />
+                            </div>
+
+                            <div className="moodIconCal">
+                                <img src={worried} alt=":-)" className='moodIcon' />
+
+                            </div>
+                            <div className="moodIconCal">
+                                <img src={excited} alt=":-)" className='moodIcon' />
+                            </div>
+
+
+                            <div className="moodIconCal">
+                                <img src={excited} alt=":-)" className='moodIcon' />
+                            </div>
+                        </div>
+
+                        <div className=" MoodLineCal">
 
                             <div className="moodIconCal">
                                 <img src={wink} alt="wink" className='moodIcon' />
@@ -45,18 +112,52 @@ function Calender() {
                                 <img src={worried} alt=":-)" className='moodIcon' />
 
                             </div>
-
                             <div className="moodIconCal">
-                                <img src={worried} alt=":-)" className='moodIcon' />
+                                <img src={neutral} alt="neutral look" className='moodIcon' />
+
+                            </div>
+                            <div className="moodIconCal">
+                                <img src={neutral} alt="neutral look" className='moodIcon' />
 
                             </div>
 
                             <div className="moodIconCal">
+                                <img src={wink} alt="wink" className='moodIcon' />
+                            </div>
+
+                        </div>
+
+                        <div className=" MoodLineCal">
+
+                            <div className="moodIconCal">
+                                <img src={wink} alt="wink" className='moodIcon' />
+                            </div>
+
+                            <div className="moodIconCal">
+                                <img src={neutral} alt="neutral look" className='moodIcon' />
+
+                            </div>
+
+                            <div className="moodIconCal">
+                                <img src={sad} alt="sad look" className='moodIcon' />
+
+                            </div>
+                            <div className="moodIconCalGrey">
+                                <img src={worried} alt=":-)" className='moodIcon' />
+
+                            </div>
+
+                            <div className="moodIconCalGrey">
+                                <img src={worried} alt=":-)" className='moodIcon' />
+
+                            </div>
+
+                            <div className="moodIconCalGrey">
                                 <img src={worried} alt=":-)" className='moodIcon' />
                             </div>
 
 
-                            <div className="moodIconCal">
+                            <div className="moodIconCalGrey">
                                 <img src={excited} alt=":-)" className='moodIcon' />
                             </div>
                         </div>
@@ -65,21 +166,22 @@ function Calender() {
 
 
 
+
                     </div>
                 </div>
-                <div className='col'>
+                <div className='colCal'>
 
                     <div className='GreenBox'>
                         <h2 className='GreenBoxText' >Largest
                             Streak! </h2>
-                        <div className="circle moodIcon">
+                        <div className="circleCal moodIcon">
                             <h2 className="moodIcon StreakNum">12</h2>
                         </div>
                     </div>
-                    <div className='GreenBox'>
-                        <h2 className='GreenBoxText'>Average
-                            mood
-                            <div className="moodIconCal">
+                    <div className='GreenBox '>
+                        <h2 className='GreenBoxText col'>Average
+                            mood!
+                            <div className="circleCal">
                                 <img src={excited} alt=":-)" className='moodIcon' />
                             </div></h2>
                     </div>
