@@ -10,101 +10,87 @@ import worried from '../../../assets/moods/worried.png'
 function Calender() {
     return (
         <div>
-            <div className='yellowBoxCal'>
+            <h1 className="parTitle Mali">January</h1>
+            <div className='rowCal'>
+                <div className='col'>
 
-                <div className="Mali MoodLine">
-                    <div className='col padCal'>
+                    <div className='weekDayTop'>
                         <h6>Sun</h6>
-                        <div className="circle moodIcon">
-                            <img src={wink} alt="wink" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
                         <h6>Mon</h6>
-                        <div className="circle moodIcon">
-                            <img src={neutral} alt="neutral look" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
                         <h6>Tue</h6>
-                        <div className="circle moodIcon">
-                            <img src={sad} alt="sad look" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
                         <h6>Wed</h6>
-                        <div className="circle moodIcon">
-                            <img src={worried} alt=":-)" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
                         <h6>Thurs</h6>
-                        <div className="circle moodIcon">
-                            <img src={worried} alt=":-)" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
                         <h6>Fri</h6>
-                        <div className="circle moodIcon">
-                            <img src={worried} alt=":-)" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
                         <h6>Sat</h6>
-                        <div className="circle moodIcon">
-                            <img src={excited} alt=":-)" className='moodIcon' />
+
+                    </div>
+                    <div className="calender">
+
+                        <div className="Mali MoodLineCal">
+
+                            <div className="moodIconCal">
+                                <img src={wink} alt="wink" className='moodIcon' />
+                            </div>
+
+                            <div className="moodIconCal">
+                                <img src={neutral} alt="neutral look" className='moodIcon' />
+
+                            </div>
+
+                            <div className="moodIconCal">
+                                <img src={sad} alt="sad look" className='moodIcon' />
+
+                            </div>
+                            <div className="moodIconCal">
+                                <img src={worried} alt=":-)" className='moodIcon' />
+
+                            </div>
+
+                            <div className="moodIconCal">
+                                <img src={worried} alt=":-)" className='moodIcon' />
+
+                            </div>
+
+                            <div className="moodIconCal">
+                                <img src={worried} alt=":-)" className='moodIcon' />
+                            </div>
+
+
+                            <div className="moodIconCal">
+                                <img src={excited} alt=":-)" className='moodIcon' />
+                            </div>
                         </div>
+
+
+
+
+
+                    </div>
+                </div>
+                <div className='col'>
+
+                    <div className='GreenBox'>
+                        <h2 className='GreenBoxText' >Largest
+                            Streak! </h2>
+                        <div className="circle moodIcon">
+                            <h2 className="moodIcon StreakNum">12</h2>
+                        </div>
+                    </div>
+                    <div className='GreenBox'>
+                        <h2 className='GreenBoxText'>Average
+                            mood
+                            <div className="moodIconCal">
+                                <img src={excited} alt=":-)" className='moodIcon' />
+                            </div></h2>
                     </div>
                 </div>
 
-
-
-                <div className="Mali MoodLine">
-                    <div className='col padCal'>
-
-                        <div className="circle moodIcon">
-                            <img src={wink} alt=":-)" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
-
-                        <div className="circle moodIcon">
-                            <img src={neutral} alt=":-)" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
-
-                        <div className="circle moodIcon">
-                            <img src={wink} alt=":-)" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
-
-                        <div className="circle moodIcon">
-                            <img src={neutral} alt=":-)" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
-
-                        <div className="circle moodIcon">
-                            <img src={neutral} alt=":-)" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
-
-                        <div className="circle moodIcon">
-                            <img src={wink} alt=":-)" className='moodIcon' />
-                        </div>
-                    </div>
-                    <div className='col padCal'>
-
-                        <div className="circle moodIcon">
-                            <img src={excited} alt=":-)" className='moodIcon' />
-                        </div>
-                    </div>
-                </div>
 
             </div>
+            <a href="/Home">
+                <button className="BtnRed right">Go Back!</button>
+            </a>
+
         </div>
     )
 }

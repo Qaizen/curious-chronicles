@@ -111,9 +111,15 @@
   align-items: center;
 }
 
+
+
+
 /*
     about-page
 */
+
+
+
 
 .about-page {
   background-color: var(--colorthr);
@@ -164,9 +170,14 @@
 }
 
 
+
+
 /*
     parent-signup-page
 */
+
+
+
 
 .parentRow {
   display: flex;
@@ -229,9 +240,16 @@
 }
 
 
+
+
+
 /*
     Chat-signup-page
 */
+
+
+
+
 .backgroundY {
 
   background-color: var(--colorfou);
@@ -324,9 +342,14 @@
 
 
 
+
+
 /*
     Q
 */
+
+
+
 
 .BackgroundQ {
   padding: 200px;
@@ -484,9 +507,13 @@
   margin: 200px;
 }
 
+
+
 /*
     Sub
 */
+
+
 
 .yellowBox {
   display: flex;
@@ -620,4 +647,86 @@ header {
   font-family: 'Mali',
     cursive;
   font-size: 30px;
+}
+
+
+
+
+/* calender */
+
+.weekDayTop {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  font-family: 'Mali',
+    cursive;
+}
+
+
+
+.calender {
+  background-color: var(--colorthr);
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  margin: 20px;
+}
+
+
+.rowCal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.GreenBoxText {
+  font-family: 'Mali',
+    cursive;
+  margin: 10px;
+
+}
+
+
+.GreenBoxCircle {
+  background-color: white;
+  height: 50px;
+  width: 50;
+}
+
+.GreenBox {
+  background-color: var(--colortwo);
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  width: 150px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+
+.moodIconCal {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 50px;
+  font-family: 'Mali',
+    cursive;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.MoodLineCal {
+  display: flex;
+  flex-direction: row;
 }
